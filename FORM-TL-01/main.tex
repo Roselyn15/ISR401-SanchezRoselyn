@@ -67,9 +67,9 @@ Los cinco requisitos de calidad vagos son E03, E07, E10, E14 y E18. Cada uno se 
 \endhead
 E03 & Tiempo de respuesta de las consultas de disponibilidad & segundos & $\leq 2$ s en el percentil 95, con 300 usuarios simultáneos & Con 300 usuarios simultáneos, el 95\,\% de las consultas de disponibilidad responderá en 2 segundos o menos. \\
 E07 & Accesos a datos de pacientes por usuarios sin permiso & número de accesos & 0 en la prueba de seguridad de cada entrega & En la prueba de seguridad de cada entrega, ningún usuario sin permiso podrá acceder a datos de pacientes (0 accesos no autorizados). \\
-E10 & Tareas de reserva completadas sin ayuda y tiempo empleado & porcentaje de personas y minutos & $\geq 95\,\%$ de adultos mayores, en $\leq 5$ minutos & En una prueba con adultos mayores de 60 años, al menos el 95\,\% reservará una cita sin ayuda en 5 minutos o menos. \\
-E14 & Disponibilidad de la plataforma & porcentaje del tiempo & $\geq 99{,}5\,\%$ mensual, de lunes a sábado de 07:00 a 19:00 & La plataforma estará disponible al menos el 99,5\,\% del tiempo de lunes a sábado entre las 07:00 y las 19:00, medido cada mes. \\
-E18 & Cobros registrados correctamente en el sistema de facturación & porcentaje de cobros & $\geq 99{,}5\,\%$ mensual & Al menos el 99,5\,\% de los cobros se registrará correctamente en el sistema de facturación mediante su interfaz de servicios web, medido cada mes. \\
+E10 & Tareas de reserva completadas sin ayuda y tiempo empleado & porcentaje de personas y minutos & $\geq 95$\,\% de adultos mayores, en $\leq 5$ minutos & En una prueba con adultos mayores de 60 años, al menos el 95\,\% reservará una cita sin ayuda en 5 minutos o menos. \\
+E14 & Disponibilidad de la plataforma & porcentaje del tiempo & $\geq 99{,}5$\,\% mensual, de lunes a sábado de 07:00 a 19:00 & La plataforma estará disponible al menos el 99,5\,\% del tiempo de lunes a sábado entre las 07:00 y las 19:00, medido cada mes. \\
+E18 & Cobros registrados correctamente en el sistema de facturación & porcentaje de cobros & $\geq 99{,}5$\,\% mensual & Al menos el 99,5\,\% de los cobros se registrará correctamente en el sistema de facturación mediante su interfaz de servicios web, medido cada mes. \\
 \bottomrule
 \end{longtable}
 \normalsize
@@ -78,16 +78,17 @@ E18 & Cobros registrados correctamente en el sistema de facturación & porcentaj
 % Aquí irá la tabla (Paso 5)
 
 \section{Declaración de uso de IA}
-\begin{itemize}
-\item \textbf{Herramienta y versión:} Claude (Anthropic), versión: sonnet 5.5.
-\item \textbf{Propósito:} explicación de conceptos, apoyo con la estructura en \LaTeX{}, revisión de mi clasificación de los enunciados y propuesta de umbrales para los requisitos cuantificados, que revisé y ajusté.
-\item \textbf{Verificación:} contrasté cada observación con el texto del caso y con las definiciones de los requisitos. Las clasificaciones fueron elaboradas por mí y corregidas tras la revisión.
-\item \textbf{Subcaracterísticas ISO/IEC 25010:2023:} no se tuvo acceso al texto completo de la norma; los nombres se tomaron de \cite{q42} y quedan pendientes de verificar contra la norma.
-\end{itemize}
+\textbf{Herramienta y versión:} Claude (Anthropic), Sonnet 5.5.\\
+\textbf{Propósito:} explicación de conceptos, apoyo con la estructura en \LaTeX{} y revisión de mi clasificación. Los umbrales de los requisitos cuantificados los definí yo a partir de los datos del caso.\\
+\textbf{Verificación:} contrasté cada observación con el texto del caso. La clasificación y los umbrales son míos.\\
+\textbf{Subcaracterísticas ISO/IEC 25010:2023:} no tuve acceso al texto completo de la norma; los nombres se tomaron de [2] y quedan pendientes de verificar.
 
 \begin{thebibliography}{9}
 \bibitem{iso25010} ISO/IEC, \emph{ISO/IEC 25010:2023, Systems and software engineering---Systems and software Quality Requirements and Evaluation (SQuaRE)---Product quality model}, International Standard, 2023.
 \bibitem{q42} arc42, ``Q42 for ISO users,'' Q42 Quality Model. [En l\'inea]. Disponible: \url{https://quality.arc42.org/articles/q42-for-iso-users/}. Consultado el 7 de noviembre de 2026.
-\end{thebibliography}
+\end{thebibliography}cd /workspaces/ISR401-SanchezRoselyn
+git add FORM-TL-01/main.tex FORM-TL-01/main.pdf
+git commit -m "Corrige errores de compilación y declaración de uso de IA"
+git push
 
 \end{document}

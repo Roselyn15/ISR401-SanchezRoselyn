@@ -23,8 +23,40 @@ Universidad Técnica Estatal de Quevedo \quad Ingeniería de Requerimientos (ISR
 \end{tabular}
 
 \section{Clasificación de los 20 enunciados}
-% Aquí irá la tabla (Paso 3)
+Los requisitos de calidad se clasifican con ISO/IEC 25010:2023 \cite{iso25010}.
 
+Los requisitos de calidad se clasifican con ISO/IEC 25010:2023 \cite{iso25010}.
+Los nombres de las subcaracterísticas se tomaron de \cite{q42}.
+
+\small
+\begin{longtable}{@{}l p{2.3cm} p{5cm} p{2cm} p{2.2cm} p{7.5cm}@{}}
+\toprule
+\textbf{Cód.} & \textbf{Tipo} & \textbf{Característica ISO/IEC 25010} & \textbf{Prod./Proc.} & \textbf{Sist./Soft.} & \textbf{Justificación} \\
+\midrule
+\endhead
+E01 & Funcional & --- & Producto & Software & Describe una función: el paciente reserva una cita. \\
+E02 & Funcional & --- & Producto & Software & Describe una función: la plataforma envía un recordatorio por mensaje de texto. \\
+E03 & Calidad & Eficiencia de desempeño (time behaviour) & Producto & Software & Es de calidad: pide rapidez, que se refiere al desempeño. \\
+E04 & Funcional & --- & Producto & Software & Describe una función: el recepcionista registra la llegada del paciente. \\
+E05 & Restricción & --- & Producto & Software & Es una restricción tecnológica: limita con qué se construye la plataforma (Java 21 y PostgreSQL). \\
+E06 & Funcional & --- & Producto & Software & Describe una función: el médico consulta la lista de pacientes del día y marca cada consulta como atendida. \\
+E07 & Calidad & Seguridad (confidentiality) & Producto & Software & Es de calidad: pide que los datos de salud estén protegidos. \\
+E08 & Restricción & --- & Producto & Software & Es una restricción: limita el entorno donde debe funcionar la app móvil (Android 10 o superior). \\
+E09 & Funcional & --- & Producto & Software & Describe una función: la plataforma registra como inasistencia la cita cancelada con menos de cuatro horas de anticipación. \\
+E10 & Calidad & Capacidad de interacción (inclusivity) & Producto & Software & Es de calidad: pide que sea fácil de usar para los pacientes adultos mayores. \\
+E11 & Restricción & --- & Proceso & Sistema & Es una restricción del proyecto: fija un plazo máximo de seis meses para entregar la plataforma. \\
+E12 & Calidad & Seguridad (confidentiality) & Producto & Software & Es de calidad: protege la cuenta al cerrar la sesión tras 10 minutos sin actividad. \\
+E13 & Funcional & --- & Producto & Sistema & Describe una función: el quiosco lee la cédula e imprime un ticket; involucra pantalla táctil e impresora. \\
+E14 & Calidad & Fiabilidad (availability) & Producto & Software & Es de calidad: pide que la plataforma esté siempre disponible. \\
+E15 & Funcional & --- & Producto & Software & Describe una función: el director médico genera un reporte mensual de inasistencias por especialidad. \\
+E16 & Restricción & --- & Proceso & Software & Es una restricción del proceso: cada incremento se valida con el director médico al final de cada iteración. \\
+E17 & Restricción & --- & Producto & Software & Es una restricción legal: el tratamiento de datos debe cumplir la Ley Orgánica de Protección de Datos Personales. \\
+E18 & Calidad & Compatibilidad (interoperability) & Producto & Software & Es de calidad: pide que la plataforma se integre sin problemas con el sistema de facturación actual. \\
+E19 & Calidad & Fiabilidad (recoverability) & Producto & Software & Es de calidad: pide restablecer el servicio en menos de 30 minutos sin perder ninguna cita confirmada. \\
+E20 & Restricción & --- & Proceso & Software & Es una restricción del proceso: todo cambio en el código lo revisa otro integrante antes de integrarse a la rama principal. \\
+\bottomrule
+\end{longtable}
+\normalsize
 \section{Requisitos de calidad cuantificados}
 % Aquí irán los 5 requisitos (Paso 4)
 
@@ -32,9 +64,10 @@ Universidad Técnica Estatal de Quevedo \quad Ingeniería de Requerimientos (ISR
 % Aquí irá la tabla (Paso 5)
 
 \section{Declaración de uso de IA}
-% Aquí irá la declaración (Paso 6)
+\item \textbf{Subcaracterísticas ISO/IEC 25010:2023:} no se tuvo acceso al texto completo de la norma; los nombres se tomaron de la página citada como \cite{q42} y quedan pendientes de verificar contra la norma.
 
-\begin{thebibliography}{9}
+\begin{thebibliography}{9} 
+\bibitem{q42} arc42, ``Q42 for ISO users,'' Q42 Quality Model. [En l\'inea]. Disponible: \url{https://quality.arc42.org/articles/q42-for-iso-users/}. Consultado el 7 de noviembre de 2026.
 \bibitem{iso29148} ISO/IEC/IEEE, \emph{ISO/IEC/IEEE 29148:2018, Systems and software engineering---Life cycle processes---Requirements engineering}, International Standard, 2018.
 \bibitem{iso25010} ISO/IEC, \emph{ISO/IEC 25010:2023, Systems and software engineering---Systems and software Quality Requirements and Evaluation (SQuaRE)---Product quality model}, International Standard, 2023.
 \end{thebibliography}

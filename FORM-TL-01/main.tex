@@ -23,7 +23,6 @@ Universidad Técnica Estatal de Quevedo \quad Ingeniería de Requerimientos (ISR
 \end{tabular}
 
 \section{Clasificación de los 20 enunciados}
-Los requisitos de calidad se clasifican con ISO/IEC 25010:2023 \cite{iso25010}.
 
 Los requisitos de calidad se clasifican con ISO/IEC 25010:2023 \cite{iso25010}.
 Los nombres de las subcaracterísticas se tomaron de \cite{q42}.
@@ -58,13 +57,28 @@ E20 & Restricción & --- & Proceso & Software & Es una restricción del proceso:
 \end{longtable}
 \normalsize
 \section{Requisitos de calidad cuantificados}
-% Aquí irán los 5 requisitos (Paso 4)
+Los cinco requisitos de calidad vagos son E03, E07, E10, E14 y E18. Cada uno se reescribe con métrica, unidad y umbral.
+
+\small
+\begin{longtable}{@{}l p{3.3cm} p{2.3cm} p{4.2cm} p{7cm}@{}}
+\toprule
+\textbf{Cód.} & \textbf{Métrica} & \textbf{Unidad} & \textbf{Umbral} & \textbf{Requisito reescrito} \\
+\midrule
+\endhead
+E03 & Tiempo de respuesta de las consultas de disponibilidad & segundos & $\leq 2$ s en el percentil 95, con 300 usuarios simultáneos & Con 300 usuarios simultáneos, el 95\,\% de las consultas de disponibilidad responderá en 2 segundos o menos. \\
+E07 & Accesos a datos de pacientes por usuarios sin permiso & número de accesos & 0 en la prueba de seguridad de cada entrega & En la prueba de seguridad de cada entrega, ningún usuario sin permiso podrá acceder a datos de pacientes (0 accesos no autorizados). \\
+E10 & Tareas de reserva completadas sin ayuda y tiempo empleado & porcentaje de personas y minutos & $\geq 95\,\%$ de adultos mayores, en $\leq 5$ minutos & En una prueba con adultos mayores de 60 años, al menos el 95\,\% reservará una cita sin ayuda en 5 minutos o menos. \\
+E14 & Disponibilidad de la plataforma & porcentaje del tiempo & $\geq 99{,}5\,\%$ mensual, de lunes a sábado de 07:00 a 19:00 & La plataforma estará disponible al menos el 99,5\,\% del tiempo de lunes a sábado entre las 07:00 y las 19:00, medido cada mes. \\
+E18 & Cobros registrados correctamente en el sistema de facturación & porcentaje de cobros & $\geq 99{,}5\,\%$ mensual & Al menos el 99,5\,\% de los cobros se registrará correctamente en el sistema de facturación mediante su interfaz de servicios web, medido cada mes. \\
+\bottomrule
+\end{longtable}
+\normalsize
 
 \section{Discrepancias con el compañero}
 % Aquí irá la tabla (Paso 5)
 
 \section{Declaración de uso de IA}
-\item \textbf{Subcaracterísticas ISO/IEC 25010:2023:} no se tuvo acceso al texto completo de la norma; los nombres se tomaron de la página citada como \cite{q42} y quedan pendientes de verificar contra la norma.
+\item \textbf{Propósito:} explicación de conceptos, apoyo con la estructura en \LaTeX{}, revisión de mi clasificación y propuesta de umbrales para los requisitos cuantificados, que revisé y ajusté.
 
 \begin{thebibliography}{9} 
 \bibitem{q42} arc42, ``Q42 for ISO users,'' Q42 Quality Model. [En l\'inea]. Disponible: \url{https://quality.arc42.org/articles/q42-for-iso-users/}. Consultado el 7 de noviembre de 2026.

@@ -52,6 +52,7 @@
 \captionsetup{font=small,labelfont=bf}
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{0.35em}
+\setlength{\emergencystretch}{2em}
 \renewcommand{\arraystretch}{1.15}
 
 % ---------------------------------------------------------------------
@@ -298,6 +299,12 @@ actualizar sus atributos rompe la trazabilidad.
 \section{Glosario}
 \label{sec:glosario}
 
+La Tabla~\ref{tab:glosario} reúne diez términos de la cláusula 3 de la
+norma, con una definición parafraseada y un ejemplo propio en Shein. Se
+eligieron los términos que sostienen el resto del informe: los que nombran
+el objeto de la ingeniería de requisitos, los que describen sus condiciones
+y los que permiten comprobar el resultado.
+
 % Los términos corresponden a la cláusula 3 de ISO/IEC/IEEE 29148:2018.
 \begin{longtable}{>{\raggedright\arraybackslash}p{3.0cm}
                   >{\raggedright\arraybackslash}p{6.4cm}
@@ -519,8 +526,8 @@ que imaginar la prueba antes de escribir el enunciado, y eso obliga a pensar
 en el sistema terminado, no en el sistema que se está describiendo.
 
 El segundo problema, más silencioso, fue la consistencia del conjunto. El
-requisito de disponibilidad pasaba la revisión individual —era claro y tenía
-métrica— pero chocaba con su propio criterio de aceptación. Lo detecté al
+requisito de disponibilidad pasaba la revisión individual ---era claro y tenía
+métrica--- pero chocaba con su propio criterio de aceptación. Lo detecté al
 comparar la Tabla~\ref{tab:requisitos} con la Tabla~\ref{tab:clasificacion}:
 el enunciado prometía todo el tiempo y la métrica toleraba siete horas de
 caída al mes. Esa revisión cruzada, que la cláusula 5.2.6 exige, la había
@@ -528,7 +535,7 @@ hecho al final; debería hacerse mientras se escribe. Ahora revisaría cada
 requisito nuevo contra los anteriores antes de agregarlo, no después.
 
 La tercera dificultad fue el lenguaje. Palabras que en una conversación
-parecen precisas —«necesario», «adecuado», «protegido»— dejan de serlo
+parecen precisas ---«necesario», «adecuado», «protegido»--- dejan de serlo
 cuando hay que probarlas. En RR-02, «los datos personales necesarios»
 sonaba correcto y era, en la práctica, una puerta abierta: cada lector podía
 decidir qué datos eran necesarios. Enumerar los cuatro campos concretos fue

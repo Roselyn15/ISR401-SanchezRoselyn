@@ -1,4 +1,4 @@
-# ISR401-SanchezRoselyn
+﻿# ISR401-SanchezRoselyn
 
 Repositorio personal de **Ingeniería de Requerimientos (ISR-401)**, Facultad de
 Ciencias de la Computación, Universidad Técnica Estatal de Quevedo.

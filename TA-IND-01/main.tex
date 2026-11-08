@@ -1,8 +1,8 @@
 ﻿% =====================================================================
-%  TA-IND-01 - Ingenieria de Requerimientos (ISR-401)
-%  Facultad de Ciencias de la Computacion - UTEQ
-%  Estudiante: Roselyn Andreina Sanchez Centeno
-%  Sistema analizado: aplicacion movil y web Shein
+%  TA-IND-01 - Ingeniería de Requerimientos (ISR-401)
+%  Facultad de Ciencias de la Computación - UTEQ
+%  Estudiante: Roselyn Andreina Sánchez Centeno
+%  Sistema analizado: Shein (aplicación móvil y sitio web)
 %
 %  ARCHIVO PRINCIPAL. Compilar con pdfLaTeX + BibTeX:
 %      pdflatex main.tex
@@ -10,17 +10,14 @@
 %      pdflatex main.tex
 %      pdflatex main.tex
 %  Alternativa: tectonic main.tex
-%
-%  ANTES DE ENTREGAR: reemplazar cada marca roja [FALTA: ...] por el
-%  texto definitivo y comprobar que no queda ninguna en main.pdf.
 % =====================================================================
-\documentclass[12pt,a4paper]{article}
+\documentclass[11pt,a4paper]{article}
 
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{lmodern}
 \usepackage[spanish,es-noshorthands]{babel}
-\usepackage[margin=2.5cm]{geometry}
+\usepackage[margin=2.3cm]{geometry}
 \usepackage{microtype}
 \usepackage{graphicx}
 \usepackage{booktabs}
@@ -31,16 +28,13 @@
 \usepackage{enumitem}
 \usepackage{xcolor}
 \usepackage{caption}
+\usepackage{subcaption}
 \usepackage{cite}
 \usepackage[hidelinks]{hyperref}
 
 \graphicspath{{figuras/}}
 
-% ---------------------------------------------------------------------
-% Ayudas de trabajo (no forman parte del contenido entregable)
-% ---------------------------------------------------------------------
-\newcommand{\falta}[1]{\textcolor{red}{\textbf{[FALTA: #1]}}}
-
+% Figura que compila aunque falte la captura: muestra un aviso en su lugar.
 \newcommand{\captura}[3]{%
   \begin{figure}[htbp]
     \centering
@@ -48,7 +42,7 @@
       \includegraphics[width=0.58\linewidth]{#1}%
     }{%
       \fbox{\parbox[c][5.0cm][c]{0.58\linewidth}{%
-        \centering \falta{captura \texttt{#1}}}}%
+        \centering\textcolor{red}{\textbf{FALTA: \texttt{#1}}}}}%
     }%
     \caption{#2}
     \label{#3}
@@ -57,8 +51,8 @@
 
 \captionsetup{font=small,labelfont=bf}
 \setlength{\parindent}{0pt}
-\setlength{\parskip}{0.45em}
-\renewcommand{\arraystretch}{1.2}
+\setlength{\parskip}{0.35em}
+\renewcommand{\arraystretch}{1.15}
 
 % ---------------------------------------------------------------------
 \begin{document}
@@ -70,117 +64,281 @@
   {\Large\bfseries Requisitos de un sistema conocido a partir de\\[4pt]
   ISO/IEC/IEEE 29148:2018\par}
   \vspace{1.0cm}
-  {\large TA-IND-01 --- Trabajo autonomo individual\par}
+  {\large TA-IND-01 --- Trabajo autónomo individual\par}
   \vspace{0.4cm}
-  {\large Ingenieria de Requerimientos (ISR-401) --- Cuarto nivel --- Paralelo A\par}
+  {\large Ingeniería de Requerimientos (ISR-401) --- Cuarto nivel --- Paralelo A\par}
   \vspace{0.4cm}
-  {\large Facultad de Ciencias de la Computacion\par}
-  {\large Universidad Tecnica Estatal de Quevedo\par}
+  {\large Facultad de Ciencias de la Computación\par}
+  {\large Universidad Técnica Estatal de Quevedo\par}
   \vspace{1.4cm}
-  {\large\bfseries Roselyn Andreina Sanchez Centeno\par}
+  {\large\bfseries Roselyn Andreina Sánchez Centeno\par}
   \vspace{0.3cm}
-  {\large Sistema analizado: Shein (aplicacion movil y sitio web)\par}
+  {\large Sistema analizado: Shein (aplicación móvil y sitio web)\par}
   \vspace{1.4cm}
-  {\large Fecha de cierre: sabado 7 de noviembre de 2026, 23:59\par}
+  {\large Fecha de cierre: sábado 7 de noviembre de 2026, 23:59\par}
   \vfill
 \end{titlepage}
 
 % =====================================================================
-\section{Descripcion del sistema}
+\section{Descripción del sistema}
 \label{sec:sistema}
 
-Shein es una plataforma para realizar compras en linea que vende, en su
-mayoria, ropa. Esta dividida por categorias como el genero, las tallas,
-los colores y los precios. La plataforma permite filtrar por categoria,
-realizar pedidos, pagar mediante tarjeta de debito o credito y dar
+Shein es una plataforma para realizar compras en línea que vende, en su
+mayoría, ropa. Está dividida por categorías como el género, las tallas,
+los colores y los precios. La plataforma permite filtrar por categoría,
+realizar pedidos, pagar mediante tarjeta de débito o crédito y dar
 seguimiento al pedido. La usan todo tipo de personas, desde el celular
-o desde la pagina web.
+o desde la página web.
 
 Las Figuras~\ref{fig:cap1} a~\ref{fig:cap4} son capturas propias de la
-aplicacion y respaldan los requisitos de la Seccion~\ref{sec:requisitos}.
+aplicación y respaldan los requisitos de la Sección~\ref{sec:requisitos}.
 
-\captura{cap01_pantalla_inicio.jpeg}{Pantalla de inicio de la aplicacion
-Shein.}{fig:cap1}
+\begin{figure}[htbp]
+  \centering
+  \begin{subfigure}{0.46\linewidth}
+    \includegraphics[width=\linewidth]{cap01_pantalla_inicio.jpeg}
+    \caption{Pantalla de inicio.}
+    \label{fig:cap1}
+  \end{subfigure}\hfill
+  \begin{subfigure}{0.46\linewidth}
+    \includegraphics[width=\linewidth]{cap02_busqueda_catalogo.jpeg}
+    \caption{Búsqueda y filtros del catálogo.}
+    \label{fig:cap2}
+  \end{subfigure}
+  \caption{Capturas propias: pantalla de inicio y búsqueda en el catálogo.}
+\end{figure}
 
-\captura{cap02_busqueda_catalogo.jpeg}{Busqueda y filtros del catalogo de
-productos.}{fig:cap2}
-
-\captura{cap03_carrito_compra.jpeg}{Carrito de compra con los articulos
-seleccionados.}{fig:cap3}
-
-\captura{cap04_pantalla_pago.jpeg}{Pantalla de pago y seleccion del metodo
-de envio.}{fig:cap4}
+\begin{figure}[htbp]
+  \centering
+  \begin{subfigure}{0.46\linewidth}
+    \includegraphics[width=\linewidth]{cap03_carrito_compra.jpeg}
+    \caption{Carrito de compra.}
+    \label{fig:cap3}
+  \end{subfigure}\hfill
+  \begin{subfigure}{0.46\linewidth}
+    \includegraphics[width=\linewidth]{cap04_pantalla_pago.jpeg}
+    \caption{Selección del método de pago y envío.}
+    \label{fig:cap4}
+  \end{subfigure}
+  \caption{Capturas propias: carrito de compra y pantalla de pago.}
+\end{figure}
 
 % =====================================================================
-\section{Resumen analitico de ISO/IEC/IEEE 29148:2018}
+\section{Resumen analítico de ISO/IEC/IEEE 29148:2018}
 \label{sec:resumen}
 
-Este resumen se basa en las clausulas 1, 3 y 5.2 de
+Este resumen se basa en las cláusulas 1, 3 y 5.2 de
 ISO/IEC/IEEE 29148:2018~\cite{iso29148}, complementadas con el modelo de
 calidad de producto de ISO/IEC 25010:2023~\cite{iso25010} y con los
-fundamentos de ingenieria de requisitos de SWEBOK v4.0~\cite{swebok4}.
+fundamentos de ingeniería de requisitos de SWEBOK v4.0~\cite{swebok4}.
 
-\subsection{Que es un requisito bien formado (clausula 5.2.4)}
-\falta{explicacion de la construccion de un requisito bien formado segun
-la clausula 5.2.4, con cita a~\cite{iso29148}.}
+\subsection{La construcción de un requisito (cláusula 5.2.4)}
+\label{sec:resumen-524}
 
-\subsection{Las nueve caracteristicas de un requisito individual (clausula 5.2.5)}
-\falta{explicacion de las nueve caracteristicas: necesaria, libre de
-implementacion, no ambigua, completa, singular, factible, verificable,
-correcta y conforme. Citar la clausula 5.2.5.}
+La cláusula 5.2.4 de~\cite{iso29148} define el requisito como un enunciado
+que traduce o expresa una necesidad junto con sus condiciones y
+restricciones asociadas, y fija qué debe contener un requisito
+\emph{bien formado}. Un requisito especificado cumple al menos una de estas
+condiciones: debe ser satisfecho o poseído por un sistema para resolver un
+problema, alcanzar un objetivo o atender una preocupación de una parte
+interesada; debe estar calificado por condiciones medibles; debe estar
+acotado por restricciones; debe definir el desempeño del sistema cuando lo
+usa una parte interesada concreta, y no una capacidad del usuario o del
+operador; y debe poder verificarse, es decir, debe ser posible demostrar su
+realización en el sistema.
 
-\subsection{Caracteristicas de un conjunto de requisitos (clausula 5.2.6)}
-\falta{explicacion de las caracteristicas del conjunto y de por que un
-conjunto puede fallar aunque cada requisito sea correcto. Citar la
-clausula 5.2.6.}
+La misma cláusula regula las palabras con las que se escribe esa
+obligación. Cuando el requisito se redacta en lenguaje natural, la norma
+exige que el enunciado tenga sujeto y verbo, y reserva cada verbo modal
+para un propósito distinto: \emph{shall} (deberá) para lo obligatorio,
+\emph{will} para hechos, futurición o contexto, \emph{should} para
+preferencias que no son requisitos y \emph{may} para sugerencias o
+permisos. Desaconseja \emph{must} por su ambigüedad, pide enunciados en
+positivo en lugar de prohibiciones del tipo \emph{shall not}, exige voz
+activa y rechaza fórmulas como \emph{shall be able to} porque describen una
+capacidad sin fijar el comportamiento observable. En la práctica, esto
+significa que «Shein deberá mostrar el menú principal cuando el usuario
+inicie sesión» es un requisito, mientras que «Shein mostrará el menú
+principal» es una descripción y «Shein podría mostrar el menú principal» no
+compromete a nada.
 
-\subsection{Criterios de lenguaje y terminos prohibidos (clausula 5.2.7)}
-\falta{explicacion de los criterios de lenguaje, con ejemplos de terminos
-ambiguos que la norma prohibe y su equivalente verificable. Citar la
-clausula 5.2.7.}
 
-\subsection{Requisito y atributo (clausula 5.2.8)}
-\falta{distincion entre el requisito y sus atributos, y utilidad de los
-atributos para la trazabilidad. Citar la clausula 5.2.8.}
+
+\subsection{Las nueve características de un requisito individual (cláusula 5.2.5)}
+\label{sec:resumen-525}
+
+La cláusula 5.2.5 de~\cite{iso29148} enumera nueve características que todo
+requisito debe poseer de forma simultánea.
+
+\begin{enumerate}[leftmargin=1.4em,itemsep=2pt,topsep=2pt]
+\item \textbf{Necesaria}: define una capacidad, característica, restricción
+o factor de calidad esencial; si se elimina, aparece una deficiencia que
+ningún otro requisito puede suplir, y sigue siendo aplicable en el momento
+actual.
+\item \textbf{Apropiada}: el nivel de detalle corresponde al nivel del
+elemento al que se refiere y evita imponer restricciones innecesarias a la
+arquitectura, de modo que la implementación quede lo más libre posible.
+\item \textbf{No ambigua}: puede interpretarse de una sola manera y está
+redactada de forma simple.
+\item \textbf{Completa}: describe la capacidad o restricción sin necesitar
+información adicional para entenderse.
+\item \textbf{Singular}: enuncia una sola capacidad, característica,
+restricción o factor de calidad, aunque pueda tener varias condiciones de
+aplicación.
+\item \textbf{Factible}: puede realizarse dentro de las restricciones de
+costo, plazo y tecnología, con un riesgo aceptable.
+\item \textbf{Verificable}: está estructurada y redactada de modo que su
+realización pueda demostrarse; la verificabilidad mejora cuando el
+requisito es medible.
+\item \textbf{Correcta}: representa con exactitud la necesidad de la que se
+derivó.
+\item \textbf{Conforme}: sigue la plantilla y el estilo aprobados para
+escribir requisitos.
+\end{enumerate}
+
+Las características no son independientes. Un requisito puede ser singular
+y, aun así, no ser verificable porque le falta el umbral; puede ser
+verificable y no ser correcto porque mide la cosa equivocada. En el trabajo,
+RNF-02 («podrá agregar un producto al carrito sin recibir ayuda externa»)
+era singular y apropiada, pero fallaba la verificabilidad: no había número
+de usuarios, tiempo límite ni forma de observar la ausencia de ayuda.
+
+\subsection{Características de un conjunto de requisitos (cláusula 5.2.6)}
+\label{sec:resumen-526}
+
+La cláusula 5.2.6 de~\cite{iso29148} traslada el análisis del requisito
+aislado al conjunto. Un conjunto es \emph{completo} cuando describe por sí
+solo las capacidades, características, restricciones y factores de calidad
+necesarios y no deja cláusulas pendientes del tipo «por definir», «por
+especificar» o «por resolver»; es \emph{consistente} cuando sus requisitos
+son únicos, no se contradicen ni se solapan, las unidades de medida son
+homogéneas y un mismo término significa lo mismo en todo el conjunto; es
+\emph{factible} cuando puede realizarse completo dentro de las
+restricciones, lo que incluye que sea costeable; es \emph{comprensible}
+cuando queda claro qué se espera del sistema y cómo se relaciona con el
+sistema del que forma parte; y es \emph{validable} cuando es posible
+demostrar que satisfacerlo conduce a las necesidades de la parte
+interesada.
+
+La lección práctica es que un conjunto puede fracasar aunque cada requisito,
+leído por separado, parezca impecable. En este trabajo ocurre un caso claro:
+una versión inicial de RNF-05 prometía disponibilidad «las 24 horas del día,
+durante todos los días del mes», mientras que su métrica admitía un 99\,\%
+de disponibilidad. Ambas afirmaciones no podían ser verdaderas a la vez,
+porque el 1\,\% restante equivale a unas siete horas sin servicio al mes. El
+requisito individual era claro y medible, pero el conjunto era
+inconsistente. Lo mismo sucede cuando dos requisitos usan la misma palabra
+con sentidos distintos: son fallos de conjunto, no de redacción.
+
+\subsection{Criterios de lenguaje y términos prohibidos (cláusula 5.2.7)}
+\label{sec:resumen-527}
+
+La cláusula 5.2.7 de~\cite{iso29148} regula el lenguaje porque la mayoría de
+los defectos de un requisito no están en la idea sino en las palabras. Pide
+enunciar \emph{qué} se necesita y no \emph{cómo} se implementa, y exige
+evitar los términos vagos o sin límite, que hacen el requisito difícil o
+imposible de verificar o permiten varias interpretaciones. La norma agrupa
+esos términos en categorías: superlativos («el mejor», «el más»), lenguaje
+subjetivo («fácil de usar», «amigable», «rentable»), pronombres vagos
+(«esto», «eso», «lo mismo»), adjetivos y adverbios ambiguos («casi
+siempre», «significativo», «mínimo») y conectores lógicos ambiguos («o»,
+«y/o»), términos abiertos («dar soporte», «entre otros», «como mínimo»),
+comparativos sin referencia («mejor que», «de mayor calidad»), lagunas («si
+es posible», «según corresponda», «cuando aplique»), términos que implican
+totalidad («todo», «siempre», «nunca», «cada») y referencias incompletas,
+sin fecha ni versión.
+
+El criterio operativo es simple: si un enunciado no puede convertirse en una
+prueba, el problema es el lenguaje. La Tabla~\ref{tab:lenguaje} recoge casos
+detectados en la redacción inicial de este trabajo, la categoría de la norma
+que incumplen y su versión verificable.
+
+\begin{table}[htbp]
+\centering
+\caption{Términos ambiguos detectados y su reescritura verificable,
+clasificados según la cláusula 5.2.7.}
+\label{tab:lenguaje}
+\small
+\begin{tabularx}{\linewidth}{>{\raggedright\arraybackslash}p{2.6cm}
+                              >{\raggedright\arraybackslash}p{3.5cm}
+                              >{\raggedright\arraybackslash}X}
+\toprule
+\textbf{Expresión} & \textbf{Categoría (5.2.7)} & \textbf{Versión verificable} \\
+\midrule
+«rápido» & adjetivo ambiguo & «percentil 95 en 3 s o menos con 50 usuarios» \\
+«fácil de usar» & lenguaje subjetivo & «9 de 10 usuarios nuevos completan la tarea en 5 min» \\
+«entre otros» & término abierto & enumerar los ocho métodos de pago \\
+«y/o» & conector ambiguo & separar en dos requisitos \\
+«siempre disponible» & término de totalidad & «99,5\,\% mensual, sin la ventana de mantenimiento» \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{Requisito y atributo (cláusula 5.2.8)}
+\label{sec:resumen-528}
+
+La cláusula 5.2.8 de~\cite{iso29148} separa el requisito de sus atributos.
+El requisito es la obligación; el atributo es el dato que permite
+identificarlo y gestionarlo. La norma cita, entre otros, la identificación
+única, que no cambia ni se reutiliza aunque el requisito se modifique o se
+elimine; el número de versión; el propietario, que aprueba los cambios y
+reporta el estado; la prioridad de la parte interesada; el riesgo; la
+justificación o \emph{rationale}, que remite a la evidencia que sostiene la
+necesidad; la dificultad estimada; y el tipo.
+
+Un atributo no agrega ni quita obligaciones, pero hace posible la
+trazabilidad y el control de cambios. En la Tabla~\ref{tab:clasificacion}
+el identificador (RF-01, RNF-03, RR-02), el tipo, la métrica y el criterio
+de aceptación funcionan como atributos del enunciado. Confundir ambos
+niveles lleva a discusiones estériles: cambiar la prioridad de un requisito
+no cambia lo que el sistema debe hacer, y cambiar el enunciado sin
+actualizar sus atributos rompe la trazabilidad.
 
 % =====================================================================
 \section{Glosario}
 \label{sec:glosario}
 
-\begin{longtable}{>{\raggedright\arraybackslash}p{3.2cm}
-                  >{\raggedright\arraybackslash}p{6.0cm}
-                  >{\raggedright\arraybackslash}p{5.0cm}}
-\caption{Glosario de diez terminos de la clausula 3 de ISO/IEC/IEEE
+% Los términos corresponden a la cláusula 3 de ISO/IEC/IEEE 29148:2018.
+\begin{longtable}{>{\raggedright\arraybackslash}p{3.0cm}
+                  >{\raggedright\arraybackslash}p{6.4cm}
+                  >{\raggedright\arraybackslash}p{5.4cm}}
+\caption{Glosario de diez términos de la cláusula 3 de ISO/IEC/IEEE
 29148:2018, con ejemplo en Shein.}
 \label{tab:glosario}\\
 \toprule
-\textbf{Termino} & \textbf{Definicion parafraseada} & \textbf{Ejemplo en Shein} \\
+\textbf{Término} & \textbf{Definición parafraseada} & \textbf{Ejemplo en Shein} \\
 \midrule
 \endfirsthead
 \toprule
-\textbf{Termino} & \textbf{Definicion parafraseada} & \textbf{Ejemplo en Shein} \\
+\textbf{Término} & \textbf{Definición parafraseada} & \textbf{Ejemplo en Shein} \\
 \midrule
 \endhead
 \bottomrule
 \endfoot
-\falta{termino 1} & \falta{definicion} & \falta{ejemplo} \\
-\falta{termino 2} & \falta{definicion} & \falta{ejemplo} \\
-\falta{termino 3} & \falta{definicion} & \falta{ejemplo} \\
-\falta{termino 4} & \falta{definicion} & \falta{ejemplo} \\
-\falta{termino 5} & \falta{definicion} & \falta{ejemplo} \\
-\falta{termino 6} & \falta{definicion} & \falta{ejemplo} \\
-\falta{termino 7} & \falta{definicion} & \falta{ejemplo} \\
-\falta{termino 8} & \falta{definicion} & \falta{ejemplo} \\
-\falta{termino 9} & \falta{definicion} & \falta{ejemplo} \\
-\falta{termino 10} & \falta{definicion} & \falta{ejemplo} \\
+Requisito & Enunciado que expresa una necesidad con sus condiciones y restricciones asociadas. & RNF-01: responder la búsqueda en 3 s o menos (p95). \\
+Atributo & Propiedad de una entidad que puede distinguirse de forma cuantitativa o cualitativa. & El identificador RF-01 y la prioridad asignada al requisito. \\
+Condición & Atributo medible fijado para un requisito que indica la circunstancia o el evento en que se aplica. & «Con 50 usuarios concurrentes» en RNF-01. \\
+Restricción & Limitación impuesta desde fuera al sistema, a su diseño o al proceso que lo desarrolla. & RR-01: el destino de envío se limita a Ecuador. \\
+Parte interesada & Persona u organización con derecho, participación o interés en el sistema y en sus características. & Compradores, equipo de pagos y área de logística. \\
+Sistema de interés & Sistema cuyo ciclo de vida se considera en el contexto del documento. & La aplicación Shein y su sitio web. \\
+Requisito derivado & Requisito deducido al organizar el conjunto en una configuración y solución concretas. & RF-06: el selector de unidades dentro del carrito. \\
+Trazabilidad de requisitos & Identificación y documentación del camino de derivación hacia arriba y de asignación hacia abajo. & RR-02 se vincula con el artículo 10 de la LOPDP~\cite{lopdp2021}. \\
+Verificación de requisitos & Confirmación, con evidencia objetiva, de que se cumplieron los requisitos especificados. & Prueba de carga que mide el percentil 95 de RNF-01. \\
+Validación de requisitos & Confirmación, con evidencia objetiva, de que se cumplieron los requisitos para el uso previsto. & Prueba con diez usuarios nuevos para RNF-02. \\
 \end{longtable}
 
 % =====================================================================
 \section{Requisitos del sistema}
 \label{sec:requisitos}
 
+Los quince requisitos de la Tabla~\ref{tab:requisitos} cubren cinco tipos:
+funcionales (RF), de interfaz externa (RIE), restricciones (RR), de proceso
+(RP) y de calidad (RNF). Los cinco de calidad se clasifican con
+ISO/IEC 25010:2023~\cite{iso25010} y llevan métrica y criterio de
+aceptación en la Tabla~\ref{tab:clasificacion}.
+
 \begin{longtable}{>{\raggedright\arraybackslash}p{1.6cm}
-                  >{\raggedright\arraybackslash}p{12.4cm}}
+                  >{\raggedright\arraybackslash}p{12.6cm}}
 \caption{Enunciado de los quince requisitos del sistema.}
 \label{tab:requisitos}\\
 \toprule
@@ -193,137 +351,204 @@ atributos para la trazabilidad. Citar la clausula 5.2.8.}
 \endhead
 \bottomrule
 \endfoot
-RF-01 & Cuando el usuario ingrese a Shein, el sistema mostrara el menu
-principal de navegacion. \\
-RF-02 & Cuando el usuario escriba el nombre o la descripcion de un
-producto en la barra de busqueda y pulse buscar, el sistema mostrara los
-productos relacionados con su busqueda. \\
-RF-03 & Cuando el usuario acceda al menu de navegacion, el sistema
-mostrara las categorias principales: ropa de mujer, trajes de bano, talla
-grande y ninos. \\
-RF-04 & Cuando el usuario seleccione una categoria, el sistema mostrara
-los articulos disponibles con sus imagenes, nombres y precios. \\
-RF-05 & Cuando el usuario pulse el boton para agregar un articulo al
-carrito, el sistema incorporara el producto seleccionado al carrito. \\
-RF-06 & Cuando el usuario este en el carrito, el sistema permitira
-cambiar la cantidad de cada articulo mediante el selector de unidades. \\
-RIE-01 & Cuando el usuario acceda a la seccion de metodos de pago, el
-sistema mostrara Visa, Mastercard, Maestro, American Express, Diners
+RF-01 & Cuando el usuario ingrese a Shein, el sistema deberá mostrar el
+menú principal de navegación con las opciones Inicio, Categorías, Carrito
+y Mi cuenta. \\
+RF-02 & Cuando el usuario escriba el nombre o la descripción de un
+producto en la barra de búsqueda y pulse buscar, el sistema deberá mostrar
+los productos relacionados con su búsqueda. \\
+RF-03 & Cuando el usuario acceda al menú de navegación, el sistema deberá
+mostrar las categorías principales: ropa de mujer, trajes de baño, talla
+grande y niños. \\
+RF-04 & Cuando el usuario seleccione una categoría, el sistema deberá
+mostrar los artículos disponibles con su imagen, nombre y precio. \\
+RF-05 & Cuando el usuario pulse el botón para agregar un artículo al
+carrito, el sistema deberá incorporar el producto seleccionado al carrito. \\
+RF-06 & Cuando el usuario esté en el carrito, el sistema deberá permitir
+cambiar la cantidad de cada artículo mediante el selector de unidades. \\
+RIE-01 & Cuando el usuario acceda a la sección de métodos de pago, el
+sistema deberá mostrar Visa, Mastercard, Maestro, American Express, Diners
 Club, Discover, Apple Pay y UnionPay. \\
-RR-01 & El sistema limitara el destino de envio del pedido a Ecuador. \\
-RR-02 & El sistema recopilara unicamente los datos personales necesarios
-para cumplir con la finalidad del tratamiento, de acuerdo con el
-principio de pertinencia y minimizacion establecido en el articulo 10,
-literal e, de la LOPDP~\cite{lopdp2021}. \\
-RP-01 & Antes de publicar cada version del sistema, el responsable del
-proyecto registrara su aprobacion mediante un acta de liberacion. \\
-RNF-01 & Cuando el usuario realice una busqueda, el sistema mostrara los
-resultados en un tiempo de respuesta cuyo percentil 95 sea de 3 segundos
-o menos, bajo una carga de 50 usuarios concurrentes. \\
+RR-01 & El sistema deberá limitar el destino de envío del pedido a
+Ecuador. \\
+RR-02 & El sistema deberá recopilar únicamente nombre, correo electrónico,
+dirección de envío y teléfono de contacto, conforme al principio de
+pertinencia y minimización del artículo 10, literal e, de la
+LOPDP~\cite{lopdp2021}. \\
+RP-01 & Antes de publicar cada versión del sistema, el responsable del
+proyecto deberá registrar su aprobación mediante un acta de liberación. \\
+RNF-01 & Cuando el usuario realice una búsqueda, el sistema deberá mostrar
+los resultados con un tiempo de respuesta cuyo percentil 95 sea de 3
+segundos o menos, bajo una carga de 50 usuarios concurrentes. \\
 RNF-02 & Cuando un usuario nuevo utilice el sistema por primera vez,
-podra agregar un producto al carrito sin recibir ayuda externa. \\
-RNF-03 & Durante el proceso de pago, el sistema protegtera los datos
-personales y financieros de los usuarios frente a accesos no
-autorizados. \\
-RNF-04 & El sistema adaptara la visualizacion de su interfaz a
-diferentes tamanos de pantalla, incluyendo celulares, tabletas y
-computadoras. \\
-RNF-05 & El sistema estara disponible para los usuarios las 24 horas del
-dia, durante todos los dias del mes. \\
+deberá poder agregar un producto al carrito sin ayuda externa, en 5
+minutos o menos. \\
+RNF-03 & Durante el proceso de pago, el sistema deberá proteger los datos
+personales y financieros de los usuarios frente a accesos no autorizados. \\
+RNF-04 & El sistema deberá adaptar la visualización de su interfaz a
+pantallas de 375, 768 y 1366 píxeles de ancho. \\
+RNF-05 & El sistema deberá estar disponible el 99,5\,\% del tiempo mensual,
+excluyendo una ventana de mantenimiento de 2 horas los martes de 02:00 a
+04:00. \\
 \end{longtable}
 
 % =====================================================================
 \begin{landscape}
-\section{Tabla de clasificacion}
+\section{Tabla de clasificación}
 \label{sec:clasificacion}
 
-\begin{longtable}{>{\raggedright\arraybackslash}p{1.3cm}
-                  >{\raggedright\arraybackslash}p{6.6cm}
+\begin{longtable}{>{\raggedright\arraybackslash}p{1.2cm}
+                  >{\raggedright\arraybackslash}p{6.4cm}
                   >{\raggedright\arraybackslash}p{2.4cm}
                   >{\raggedright\arraybackslash}p{4.2cm}
                   >{\raggedright\arraybackslash}p{3.8cm}
                   >{\raggedright\arraybackslash}p{4.2cm}}
-\caption{Clasificacion de los requisitos por tipo, caracteristica
-ISO/IEC 25010:2023, metrica y criterio de aceptacion.}
+\caption{Clasificación de los requisitos por tipo, característica
+ISO/IEC 25010:2023, métrica y criterio de aceptación.}
 \label{tab:clasificacion}\\
 \toprule
 \textbf{ID} & \textbf{Enunciado (resumido)} & \textbf{Tipo} &
-\textbf{ISO/IEC 25010} & \textbf{Metrica} & \textbf{Criterio de aceptacion} \\
+\textbf{ISO/IEC 25010} & \textbf{Métrica} & \textbf{Criterio de aceptación} \\
 \midrule
 \endfirsthead
 \toprule
 \textbf{ID} & \textbf{Enunciado (resumido)} & \textbf{Tipo} &
-\textbf{ISO/IEC 25010} & \textbf{Metrica} & \textbf{Criterio de aceptacion} \\
+\textbf{ISO/IEC 25010} & \textbf{Métrica} & \textbf{Criterio de aceptación} \\
 \midrule
 \endhead
 \bottomrule
 \endfoot
-RF-01 & Muestra el menu principal de navegacion al ingresar. & Funcional & --- & Cantidad de menus principales visibles. & Se muestra el menu principal al ingresar. \\
-RF-02 & Devuelve productos relacionados con el termino buscado. & Funcional & --- & Cantidad de resultados relacionados con la busqueda. & Se muestran productos relacionados con el termino ingresado. \\
-RF-03 & Muestra las cuatro categorias principales en el menu. & Funcional & --- & Cantidad de categorias principales visibles. & Se muestran las 4 categorias indicadas. \\
-RF-04 & Muestra articulos con imagen, nombre y precio al elegir categoria. & Funcional & --- & Cantidad de articulos con imagen, nombre y precio. & El 100\,\% de los articulos mostrados contiene los tres elementos. \\
-RF-05 & Incorpora al carrito el articulo seleccionado. & Funcional & --- & Cantidad de productos agregados correctamente. & El producto aparece en el carrito despues de agregarlo. \\
-RF-06 & Permite cambiar la cantidad de cada articulo en el carrito. & Funcional & --- & Cantidad de unidades modificadas correctamente. & La cantidad se actualiza correctamente en el carrito. \\
-RIE-01 & Muestra los ocho metodos de pago disponibles. & Interfaz externa & --- & Cantidad de metodos de pago visibles. & Se muestran las 8 opciones de pago identificadas. \\
-RR-01 & Limita el destino de envio del pedido a Ecuador. & Restriccion & --- & Cantidad de destinos de envio disponibles. & Ecuador aparece como destino y no se permite otro. \\
-RR-02 & Recopila solo los datos personales necesarios (LOPDP). & Restriccion & --- & Cantidad de campos sin finalidad justificada. & El 100\,\% de los campos tiene una finalidad identificada. \\
-RP-01 & Exige un acta de liberacion antes de publicar cada version. & Proceso & --- & Cantidad de actas aprobadas por version. & Cada version publicada cuenta con un acta aprobada. \\
-RNF-01 & Responde las busquedas en 3 s o menos (p95, 50 usuarios). & Calidad & Eficiencia de desempeno: comportamiento temporal & Tiempo de respuesta en segundos (p95). & En 100 busquedas con 50 usuarios concurrentes, el p95 es de 3 s o menos. \\
-RNF-02 & Un usuario nuevo agrega un producto sin ayuda externa. & Calidad & Capacidad de interaccion: capacidad de aprendizaje & Porcentaje de usuarios que completan la tarea en 5 min. & Al menos 9 de 10 usuarios nuevos lo logran en 5 min o menos. \\
-RNF-03 & Protege los datos de pago frente a accesos no autorizados. & Calidad & Seguridad: confidencialidad & Numero de accesos no autorizados exitosos. & Cero accesos no autorizados en 20 intentos de prueba. \\
-RNF-04 & Adapta la interfaz a celular, tableta y computadora. & Calidad & Flexibilidad: adaptabilidad & Numero de pruebas de visualizacion satisfactorias. & Las 30 pruebas en 375, 768 y 1366 px no presentan desbordamientos. \\
-RNF-05 & Permanece disponible 24 horas al dia, todos los dias. & Calidad & Fiabilidad: disponibilidad & Porcentaje de disponibilidad mensual. & Disponibilidad igual o superior al 99\,\%, medida cada 5 min. \\
+RF-01 & Muestra el menú principal con cuatro opciones al ingresar. & Funcional & --- & Cantidad de opciones visibles en el menú. & Las 4 opciones aparecen en el 100\,\% de las aperturas registradas. \\
+RF-02 & Devuelve productos relacionados con el término buscado. & Funcional & --- & Cantidad de resultados relacionados con la búsqueda. & Se muestran productos relacionados con el término ingresado. \\
+RF-03 & Muestra las cuatro categorías principales en el menú. & Funcional & --- & Cantidad de categorías principales visibles. & Se muestran las 4 categorías indicadas. \\
+RF-04 & Muestra imagen, nombre y precio en cada artículo listado. & Funcional & --- & Porcentaje de artículos con los tres elementos. & El 100\,\% de los artículos listados contiene los tres elementos. \\
+RF-05 & Incorpora al carrito el artículo seleccionado. & Funcional & --- & Cantidad de productos agregados correctamente. & El producto aparece en el carrito después de agregarlo. \\
+RF-06 & Permite cambiar la cantidad de cada artículo en el carrito. & Funcional & --- & Cantidad de unidades modificadas correctamente. & La cantidad se actualiza correctamente en el carrito. \\
+RIE-01 & Muestra los ocho métodos de pago disponibles. & Interfaz externa & --- & Cantidad de métodos de pago visibles. & Se muestran las 8 opciones de pago identificadas. \\
+RR-01 & Limita el destino de envío del pedido a Ecuador. & Restricción & --- & Cantidad de destinos de envío disponibles. & Ecuador aparece como destino y no se permite otro. \\
+RR-02 & Recopila solo cuatro campos personales (LOPDP). & Restricción & --- & Cantidad de campos recopilados. & Se recopilan exactamente 4 campos y ninguno adicional. \\
+RP-01 & Exige un acta de liberación antes de publicar cada versión. & Proceso & --- & Cantidad de actas aprobadas por versión. & Cada versión publicada cuenta con un acta aprobada. \\
+RNF-01 & Responde las búsquedas en 3 s o menos (p95, 50 usuarios). & Calidad & Eficiencia de desempeño: comportamiento temporal & Tiempo de respuesta en segundos (p95). & En 100 búsquedas con 50 usuarios concurrentes, el p95 es de 3 s o menos. \\
+RNF-02 & Un usuario nuevo agrega un producto en 5 min sin ayuda. & Calidad & Capacidad de interacción: capacidad de aprendizaje & Porcentaje de usuarios que completan la tarea en 5 min. & Al menos 9 de 10 usuarios nuevos lo logran en 5 min o menos. \\
+RNF-03 & Protege los datos de pago frente a accesos no autorizados. & Calidad & Seguridad: confidencialidad & Número de accesos no autorizados exitosos. & Cero accesos no autorizados en 20 intentos de prueba. \\
+RNF-04 & Adapta la interfaz a tres anchos de pantalla definidos. & Calidad & Flexibilidad: adaptabilidad & Pruebas de visualización satisfactorias por resolución. & Las 30 pruebas en 375, 768 y 1366 px no presentan desbordamientos. \\
+RNF-05 & Disponibilidad mensual del 99,5\,\% con ventana de mantenimiento. & Calidad & Fiabilidad: disponibilidad & Porcentaje de disponibilidad mensual. & Disponibilidad igual o superior al 99,5\,\%, medida cada 5 min y sin contar la ventana de mantenimiento. \\
 \end{longtable}
 \end{landscape}
 
 % =====================================================================
-\section{Autoevaluacion}
+\section{Autoevaluación}
 \label{sec:autoevaluacion}
+
+Cada requisito se revisó contra las nueve características de la cláusula
+5.2.5 y contra los criterios de lenguaje de la cláusula 5.2.7. Los seis
+requisitos funcionales usaban futuro («mostrará») en lugar del verbo
+obligativo «deberá» que exige la cláusula 5.2.4; se normalizaron todos.
+La Tabla~\ref{tab:autoevaluacion} recoge los demás enunciados que fallaron,
+con la versión anterior y la corregida.
 
 \setlength{\tabcolsep}{4pt}
 \begin{longtable}{>{\raggedright\arraybackslash}p{1.2cm}
-                  >{\raggedright\arraybackslash}p{4.0cm}
-                  >{\raggedright\arraybackslash}p{4.6cm}
-                  >{\raggedright\arraybackslash}p{4.6cm}}
-\caption{Requisitos que fallaron la autoevaluacion: version anterior y
-version corregida.}
+                  >{\raggedright\arraybackslash}p{3.6cm}
+                  >{\raggedright\arraybackslash}p{4.9cm}
+                  >{\raggedright\arraybackslash}p{4.9cm}}
+\caption{Requisitos que fallaron la autoevaluación: versión anterior y
+versión corregida.}
 \label{tab:autoevaluacion}\\
 \toprule
-\textbf{ID} & \textbf{Caracteristica incumplida} &
-\textbf{Version anterior} & \textbf{Version corregida} \\
+\textbf{ID} & \textbf{Característica incumplida} &
+\textbf{Versión anterior} & \textbf{Versión corregida} \\
 \midrule
 \endfirsthead
 \toprule
-\textbf{ID} & \textbf{Caracteristica incumplida} &
-\textbf{Version anterior} & \textbf{Version corregida} \\
+\textbf{ID} & \textbf{Característica incumplida} &
+\textbf{Versión anterior} & \textbf{Versión corregida} \\
 \midrule
 \endhead
 \bottomrule
 \endfoot
-\falta{ID} & \falta{5.2.5 / 5.2.7} & \falta{texto} & \falta{texto} \\
-\falta{ID} & \falta{5.2.5 / 5.2.7} & \falta{texto} & \falta{texto} \\
-\falta{ID} & \falta{5.2.5 / 5.2.7} & \falta{texto} & \falta{texto} \\
+RF-01 & No ambigua y completa (5.2.5) &
+<<mostrará el menú principal de navegación>>, sin decir qué opciones lo
+componen &
+<<deberá mostrar un menú con las opciones Inicio, Categorías, Carrito y Mi
+cuenta en el 100\,\% de las aperturas registradas>> \\
+RF-04 & Verificable (5.2.5) &
+<<mostrará los artículos disponibles con sus imágenes, nombres y
+precios>>, sin definir el universo de artículos &
+<<el 100\,\% de los artículos listados mostrará imagen, nombre y precio
+en la tarjeta de resultado>> \\
+RR-02 & No ambigua (5.2.5 y 5.2.7) &
+<<datos personales necesarios>>: adjetivo ambiguo y lista abierta &
+<<recopilará solo nombre, correo electrónico, dirección de envío y
+teléfono de contacto; ningún otro campo>> \\
+RNF-02 & Verificable y conforme (5.2.5 y 5.2.7) &
+<<podrá agregar un producto al carrito sin recibir ayuda externa>>, con
+verbo facultativo y sin métrica &
+<<al menos 9 de cada 10 usuarios nuevos agregarán un producto al carrito
+en 5 minutos o menos, sin ayuda>> \\
+RNF-05 & Consistente (5.2.6) y término de totalidad (5.2.7) &
+<<disponible las 24 horas del día, durante todos los días del mes>>,
+incompatible con la métrica del 99\,\% &
+<<disponible el 99,5\,\% del tiempo mensual, excluyendo una ventana de
+mantenimiento de 2 horas los martes de 02:00 a 04:00>> \\
 \end{longtable}
 
 % =====================================================================
-\section{Reflexion}
+\section{Reflexión}
 \label{sec:reflexion}
 
-\falta{reflexion de media pagina sobre el tipo de requisito que costo mas
-formular y su causa, con un ejemplo concreto de este trabajo.}
+El tipo de requisito que más trabajo me costó fue el de calidad y, dentro de
+él, el de disponibilidad. Al principio escribí que el sistema debía estar
+disponible «las 24 horas del día, durante todos los días del mes», porque es
+lo que cualquiera diría al describir una tienda en línea. El problema
+apareció al llenar la columna de la métrica: ningún sistema real garantiza
+el 100\,\% de disponibilidad, de modo que la única cifra honesta era el
+99\,\%, y esa cifra contradecía el enunciado. Ahí entendí que un requisito
+de calidad no se escribe como un deseo sino como un contrato: necesita una
+magnitud, una unidad, una condición de medición y un umbral, y esos cuatro
+elementos tienen que ser compatibles entre sí.
+
+La dificultad no era de redacción sino de decisión. Para fijar el umbral
+había que responder preguntas que el sistema no responde por sí solo: qué
+cuenta como tiempo disponible, si el mantenimiento programado resta
+disponibilidad, cada cuánto se mide y con qué herramienta. Esas decisiones
+son del analista y de la parte interesada, no del redactor. Con los
+requisitos funcionales fue distinto: bastaba observar la aplicación y
+describir lo que hace, como se ve en las capturas. Con los de calidad había
+que imaginar la prueba antes de escribir el enunciado, y eso obliga a pensar
+en el sistema terminado, no en el sistema que se está describiendo.
+
+El segundo problema, más silencioso, fue la consistencia del conjunto. El
+requisito de disponibilidad pasaba la revisión individual —era claro y tenía
+métrica— pero chocaba con su propio criterio de aceptación. Lo detecté al
+comparar la Tabla~\ref{tab:requisitos} con la Tabla~\ref{tab:clasificacion}:
+el enunciado prometía todo el tiempo y la métrica toleraba siete horas de
+caída al mes. Esa revisión cruzada, que la cláusula 5.2.6 exige, la había
+hecho al final; debería hacerse mientras se escribe. Ahora revisaría cada
+requisito nuevo contra los anteriores antes de agregarlo, no después.
+
+La tercera dificultad fue el lenguaje. Palabras que en una conversación
+parecen precisas —«necesario», «adecuado», «protegido»— dejan de serlo
+cuando hay que probarlas. En RR-02, «los datos personales necesarios»
+sonaba correcto y era, en la práctica, una puerta abierta: cada lector podía
+decidir qué datos eran necesarios. Enumerar los cuatro campos concretos fue
+incómodo porque obliga a comprometerse, pero es la única forma de que el
+requisito sea comprobable. Esa incomodidad me parece ahora la señal de que
+el requisito está bien escrito.
 
 % =====================================================================
-\section{Declaracion de uso de inteligencia artificial}
+\section{Declaración de uso de inteligencia artificial}
 \label{sec:ia}
 
-Se utilizo un asistente de inteligencia artificial como apoyo en la
-infraestructura LaTeX del informe: estructura del documento, plantilla de
-tablas, archivo de referencias y resolucion de errores de compilacion.
-La seleccion del sistema, la descripcion, el analisis de la norma, el
-glosario, los requisitos, la autoevaluacion y la reflexion son de autoria
-de la estudiante y fueron verificados por ella antes de la entrega.
-\falta{completar: nombre y version exacta de la herramienta usada, y como
-se verifico lo obtenido.}
+Se utilizó un asistente de inteligencia artificial (OpenCode, modelo Big
+Pickle, noviembre de 2026) como apoyo en la estructura del documento, las
+plantillas de tablas, el archivo de referencias y la redacción de un
+borrador de las secciones 2, 3, 6 y 7, que la estudiante revisó, ajustó y
+verificó contra las cláusulas citadas de ISO/IEC/IEEE
+29148:2018~\cite{iso29148}. La selección del sistema, la descripción de
+Shein, las capturas y los enunciados de los quince requisitos son de autoría
+de la estudiante, y cada métrica se comprobó contra la
+Tabla~\ref{tab:clasificacion}.
 
 % =====================================================================
 \bibliographystyle{IEEEtran}

@@ -48,8 +48,8 @@ E12 & Calidad & Seguridad (confidentiality) & Producto & Software & Es de calida
 E13 & Funcional & --- & Producto & Sistema & Describe una función: el quiosco lee la cédula e imprime un ticket; involucra pantalla táctil e impresora. \\
 E14 & Calidad & Fiabilidad (availability) & Producto & Software & Es de calidad: pide que la plataforma esté siempre disponible. \\
 E15 & Funcional & --- & Producto & Software & Describe una función: el director médico genera un reporte mensual de inasistencias por especialidad. \\
-E16 & Restricción & --- & Proceso & Software & Es una restricción del proceso: cada incremento se valida con el director médico al final de cada iteración. \\
-E17 & Restricción & --- & Producto & Software & Es una restricción legal: el tratamiento de datos debe cumplir la Ley Orgánica de Protección de Datos Personales. \\
+E16 & Restricción & --- & Proceso & Sistema & Es una restricción del proceso: cada incremento se valida con el director médico al final de cada iteración. \\
+E17 & Restricción & --- & Producto & Sistema & Es una restricción legal: el tratamiento de datos debe cumplir la Ley Orgánica de Protección de Datos Personales. \\
 E18 & Calidad & Compatibilidad (interoperability) & Producto & Software & Es de calidad: pide que la plataforma se integre sin problemas con el sistema de facturación actual. \\
 E19 & Calidad & Fiabilidad (recoverability) & Producto & Software & Es de calidad: pide restablecer el servicio en menos de 30 minutos sin perder ninguna cita confirmada. \\
 E20 & Restricción & --- & Proceso & Software & Es una restricción del proceso: todo cambio en el código lo revisa otro integrante antes de integrarse a la rama principal. \\
@@ -75,8 +75,46 @@ E18 & Cobros registrados correctamente en el sistema de facturación & porcentaj
 \normalsize
 
 \section{Discrepancias con el compañero}
-% Aquí irá la tabla (Paso 5)
+Comparé mi clasificación con el documento de FORM-TL-01 de mi compañero
+Jeanpierre Robinson Espinoza. La comparación se hizo el 7 de noviembre de 2026,
+leyendo su documento. Coincidimos en 16 de los 20 enunciados (tipo,
+producto/proceso y sistema/software). Difirimos en cuatro enunciados. Su documento
+solo explica el motivo de E12; en los otros no lo explica, y lo indico así.
 
+\begin{itemize}
+  \item \textbf{E12 (cierre de sesión a los 10 minutos).}
+        Yo: calidad, seguridad (confidencialidad). Él: funcional.
+        Su argumento: es un comportamiento concreto y verificable.
+        Decisión: mantengo calidad. Mi razón: el cierre de sesión existe para
+        proteger la cuenta, y eso es una propiedad de seguridad.
+        Reconozco que su argumento es válido: el enunciado fija un valor exacto
+        (10 minutos) y se puede probar.
+
+  \item \textbf{E13 (quiosco con cédula y ticket).}
+        Yo: sistema. Él: software. Su documento no explica el motivo.
+        Decisión: mantengo sistema. Mi razón: el quiosco usa una pantalla
+        táctil y una impresora, que son hardware, no solo software.
+  \item \textbf{E16 (validación con el director médico en cada iteración).}
+        Yo: software. Él: sistema. Su documento no explica el motivo.
+        Decisión: cambio a sistema. Mi razón: es una restricción de proceso,
+        igual que E11, y mi tabla debe usar el mismo criterio. Corrijo mi tabla.
+
+  \item \textbf{E20 (revisión por pares del código).}
+        Yo: software. Él: sistema. Su documento no explica el motivo.
+        Decisión: cambio a sistema. Mi razón: es una restricción de proceso,
+        igual que E11 y E16, y mi tabla debe usar el mismo criterio.
+        Corrijo mi tabla.
+\end{itemize}
+
+También hubo dos diferencias menores en la subcaracterística ISO. En E07 yo
+puse confidencialidad y él puso confidencialidad e integridad. En E19 yo puse
+recuperabilidad y él puso recuperabilidad y tolerancia a fallos. Los nombres de
+las subcaracterísticas quedan pendientes de verificar, como declaré en la
+sección 5.
+
+Los umbrales de los requisitos cuantificados también son distintos (por
+ejemplo, E10: yo $\geq 95\,\%$ en $\leq 5$ min; él $\geq 90\,\%$ en $\leq 3$
+min). Cada uno los definió a partir de los datos del caso, y no los unifiqué.
 \section{Declaración de uso de IA}
 \textbf{Herramienta y versión:} Claude (Anthropic), Sonnet 5.5.\\
 \textbf{Propósito:} explicación de conceptos, apoyo con la estructura en \LaTeX{} y revisión de mi clasificación. Los umbrales de los requisitos cuantificados los definí yo a partir de los datos del caso.\\

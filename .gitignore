@@ -2,3 +2,9 @@
 *.log
 *.out
 *.toc
+*.bbl
+*.blg
+*.bcf
+*.run.xml
+*.synctex.gz
+*.xdv

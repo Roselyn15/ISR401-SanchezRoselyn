@@ -1,61 +1,332 @@
-\documentclass[11pt,a4paper]{article}
-\usepackage[utf8]{inputenc}
+﻿% =====================================================================
+%  TA-IND-01 - Ingenieria de Requerimientos (ISR-401)
+%  Facultad de Ciencias de la Computacion - UTEQ
+%  Estudiante: Roselyn Andreina Sanchez Centeno
+%  Sistema analizado: aplicacion movil y web Shein
+%
+%  ARCHIVO PRINCIPAL. Compilar con pdfLaTeX + BibTeX:
+%      pdflatex main.tex
+%      bibtex main
+%      pdflatex main.tex
+%      pdflatex main.tex
+%  Alternativa: tectonic main.tex
+%
+%  ANTES DE ENTREGAR: reemplazar cada marca roja [FALTA: ...] por el
+%  texto definitivo y comprobar que no queda ninguna en main.pdf.
+% =====================================================================
+\documentclass[12pt,a4paper]{article}
+
 \usepackage[T1]{fontenc}
-\usepackage[spanish,es-tabla]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[spanish,es-noshorthands]{babel}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{microtype}
 \usepackage{graphicx}
 \usepackage{booktabs}
 \usepackage{longtable}
 \usepackage{array}
-\usepackage[margin=2.5cm]{geometry}
+\usepackage{tabularx}
+\usepackage{pdflscape}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{caption}
+\usepackage{cite}
 \usepackage[hidelinks]{hyperref}
 
 \graphicspath{{figuras/}}
 
-\title{TA-IND-01: IEEE 29148 y tipos de requisitos de Shein}
-\author{Roselyn S\'anchez\\
-Ingenier\'ia de Requerimientos (ISR-401), 4.\textsuperscript{o} nivel, Paralelo A}
-\date{Fecha de cierre de la entrega: mi\'ercoles 11 de noviembre de 2026, 23:59}
+% ---------------------------------------------------------------------
+% Ayudas de trabajo (no forman parte del contenido entregable)
+% ---------------------------------------------------------------------
+\newcommand{\falta}[1]{\textcolor{red}{\textbf{[FALTA: #1]}}}
 
+\newcommand{\captura}[3]{%
+  \begin{figure}[htbp]
+    \centering
+    \IfFileExists{figuras/#1}{%
+      \includegraphics[width=0.58\linewidth]{#1}%
+    }{%
+      \fbox{\parbox[c][5.0cm][c]{0.58\linewidth}{%
+        \centering \falta{captura \texttt{#1}}}}%
+    }%
+    \caption{#2}
+    \label{#3}
+  \end{figure}%
+}
+
+\captionsetup{font=small,labelfont=bf}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.45em}
+\renewcommand{\arraystretch}{1.2}
+
+% ---------------------------------------------------------------------
 \begin{document}
-\maketitle
 
-\section{Sistema elegido}
-% Tu parrafo de descripcion de Shein.
+% ============================ PORTADA ================================
+\begin{titlepage}
+  \centering
+  \vspace*{1.4cm}
+  {\Large\bfseries Requisitos de un sistema conocido a partir de\\[4pt]
+  ISO/IEC/IEEE 29148:2018\par}
+  \vspace{1.0cm}
+  {\large TA-IND-01 --- Trabajo autonomo individual\par}
+  \vspace{0.4cm}
+  {\large Ingenieria de Requerimientos (ISR-401) --- Cuarto nivel --- Paralelo A\par}
+  \vspace{0.4cm}
+  {\large Facultad de Ciencias de la Computacion\par}
+  {\large Universidad Tecnica Estatal de Quevedo\par}
+  \vspace{1.4cm}
+  {\large\bfseries Roselyn Andreina Sanchez Centeno\par}
+  \vspace{0.3cm}
+  {\large Sistema analizado: Shein (aplicacion movil y sitio web)\par}
+  \vspace{1.4cm}
+  {\large Fecha de cierre: sabado 7 de noviembre de 2026, 23:59\par}
+  \vfill
+\end{titlepage}
 
-\section{Resumen anal\'itico}
-% 1,5 a 2 paginas. Cita asi: \cite{iso29148}, cl.~5.2.5
+% =====================================================================
+\section{Descripcion del sistema}
+\label{sec:sistema}
 
+Shein es una plataforma para realizar compras en linea que vende, en su
+mayoria, ropa. Esta dividida por categorias como el genero, las tallas,
+los colores y los precios. La plataforma permite filtrar por categoria,
+realizar pedidos, pagar mediante tarjeta de debito o credito y dar
+seguimiento al pedido. La usan todo tipo de personas, desde el celular
+o desde la pagina web.
+
+Las Figuras~\ref{fig:cap1} a~\ref{fig:cap4} son capturas propias de la
+aplicacion y respaldan los requisitos de la Seccion~\ref{sec:requisitos}.
+
+\captura{cap01_pantalla_inicio.jpeg}{Pantalla de inicio de la aplicacion
+Shein.}{fig:cap1}
+
+\captura{cap02_busqueda_catalogo.jpeg}{Busqueda y filtros del catalogo de
+productos.}{fig:cap2}
+
+\captura{cap03_carrito_compra.jpeg}{Carrito de compra con los articulos
+seleccionados.}{fig:cap3}
+
+\captura{cap04_pantalla_pago.jpeg}{Pantalla de pago y seleccion del metodo
+de envio.}{fig:cap4}
+
+% =====================================================================
+\section{Resumen analitico de ISO/IEC/IEEE 29148:2018}
+\label{sec:resumen}
+
+Este resumen se basa en las clausulas 1, 3 y 5.2 de
+ISO/IEC/IEEE 29148:2018~\cite{iso29148}, complementadas con el modelo de
+calidad de producto de ISO/IEC 25010:2023~\cite{iso25010} y con los
+fundamentos de ingenieria de requisitos de SWEBOK v4.0~\cite{swebok4}.
+
+\subsection{Que es un requisito bien formado (clausula 5.2.4)}
+\falta{explicacion de la construccion de un requisito bien formado segun
+la clausula 5.2.4, con cita a~\cite{iso29148}.}
+
+\subsection{Las nueve caracteristicas de un requisito individual (clausula 5.2.5)}
+\falta{explicacion de las nueve caracteristicas: necesaria, libre de
+implementacion, no ambigua, completa, singular, factible, verificable,
+correcta y conforme. Citar la clausula 5.2.5.}
+
+\subsection{Caracteristicas de un conjunto de requisitos (clausula 5.2.6)}
+\falta{explicacion de las caracteristicas del conjunto y de por que un
+conjunto puede fallar aunque cada requisito sea correcto. Citar la
+clausula 5.2.6.}
+
+\subsection{Criterios de lenguaje y terminos prohibidos (clausula 5.2.7)}
+\falta{explicacion de los criterios de lenguaje, con ejemplos de terminos
+ambiguos que la norma prohibe y su equivalente verificable. Citar la
+clausula 5.2.7.}
+
+\subsection{Requisito y atributo (clausula 5.2.8)}
+\falta{distincion entre el requisito y sus atributos, y utilidad de los
+atributos para la trazabilidad. Citar la clausula 5.2.8.}
+
+% =====================================================================
 \section{Glosario}
-% 10 terminos de la clausula 3.
+\label{sec:glosario}
 
+\begin{longtable}{>{\raggedright\arraybackslash}p{3.2cm}
+                  >{\raggedright\arraybackslash}p{6.0cm}
+                  >{\raggedright\arraybackslash}p{5.0cm}}
+\caption{Glosario de diez terminos de la clausula 3 de ISO/IEC/IEEE
+29148:2018, con ejemplo en Shein.}
+\label{tab:glosario}\\
+\toprule
+\textbf{Termino} & \textbf{Definicion parafraseada} & \textbf{Ejemplo en Shein} \\
+\midrule
+\endfirsthead
+\toprule
+\textbf{Termino} & \textbf{Definicion parafraseada} & \textbf{Ejemplo en Shein} \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+\falta{termino 1} & \falta{definicion} & \falta{ejemplo} \\
+\falta{termino 2} & \falta{definicion} & \falta{ejemplo} \\
+\falta{termino 3} & \falta{definicion} & \falta{ejemplo} \\
+\falta{termino 4} & \falta{definicion} & \falta{ejemplo} \\
+\falta{termino 5} & \falta{definicion} & \falta{ejemplo} \\
+\falta{termino 6} & \falta{definicion} & \falta{ejemplo} \\
+\falta{termino 7} & \falta{definicion} & \falta{ejemplo} \\
+\falta{termino 8} & \falta{definicion} & \falta{ejemplo} \\
+\falta{termino 9} & \falta{definicion} & \falta{ejemplo} \\
+\falta{termino 10} & \falta{definicion} & \falta{ejemplo} \\
+\end{longtable}
+
+% =====================================================================
 \section{Requisitos del sistema}
-% Ejemplo de figura (cambia el nombre por el de tu captura):
-% \begin{figure}[ht]
-%   \centering
-%   \includegraphics[width=0.4\textwidth]{cap01_busqueda_catalogo.png}
-%   \caption{B\'usqueda y filtros del cat\'alogo en Shein.}
-%   \label{fig:busqueda}
-% \end{figure}
-% En el texto: como muestra la Figura~\ref{fig:busqueda}, ...
+\label{sec:requisitos}
 
-\section{Tabla de clasificaci\'on}
-% \begin{longtable}{p{1.2cm}p{5cm}p{2cm}p{2cm}p{2cm}p{2.5cm}}
-% \caption{Clasificaci\'on de requisitos.}\label{tab:req}\\
-% \toprule
-% ID & Enunciado & Tipo & ISO 25010 & M\'etrica & Criterio \\
-% \midrule
-% \endhead
-% RF-01 & ... & ... & ... & ... & ... \\
-% \bottomrule
-% \end{longtable}
+\begin{longtable}{>{\raggedright\arraybackslash}p{1.6cm}
+                  >{\raggedright\arraybackslash}p{12.4cm}}
+\caption{Enunciado de los quince requisitos del sistema.}
+\label{tab:requisitos}\\
+\toprule
+\textbf{ID} & \textbf{Enunciado del requisito} \\
+\midrule
+\endfirsthead
+\toprule
+\textbf{ID} & \textbf{Enunciado del requisito} \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+RF-01 & Cuando el usuario ingrese a Shein, el sistema mostrara el menu
+principal de navegacion. \\
+RF-02 & Cuando el usuario escriba el nombre o la descripcion de un
+producto en la barra de busqueda y pulse buscar, el sistema mostrara los
+productos relacionados con su busqueda. \\
+RF-03 & Cuando el usuario acceda al menu de navegacion, el sistema
+mostrara las categorias principales: ropa de mujer, trajes de bano, talla
+grande y ninos. \\
+RF-04 & Cuando el usuario seleccione una categoria, el sistema mostrara
+los articulos disponibles con sus imagenes, nombres y precios. \\
+RF-05 & Cuando el usuario pulse el boton para agregar un articulo al
+carrito, el sistema incorporara el producto seleccionado al carrito. \\
+RF-06 & Cuando el usuario este en el carrito, el sistema permitira
+cambiar la cantidad de cada articulo mediante el selector de unidades. \\
+RIE-01 & Cuando el usuario acceda a la seccion de metodos de pago, el
+sistema mostrara Visa, Mastercard, Maestro, American Express, Diners
+Club, Discover, Apple Pay y UnionPay. \\
+RR-01 & El sistema limitara el destino de envio del pedido a Ecuador. \\
+RR-02 & El sistema recopilara unicamente los datos personales necesarios
+para cumplir con la finalidad del tratamiento, de acuerdo con el
+principio de pertinencia y minimizacion establecido en el articulo 10,
+literal e, de la LOPDP~\cite{lopdp2021}. \\
+RP-01 & Antes de publicar cada version del sistema, el responsable del
+proyecto registrara su aprobacion mediante un acta de liberacion. \\
+RNF-01 & Cuando el usuario realice una busqueda, el sistema mostrara los
+resultados en un tiempo de respuesta cuyo percentil 95 sea de 3 segundos
+o menos, bajo una carga de 50 usuarios concurrentes. \\
+RNF-02 & Cuando un usuario nuevo utilice el sistema por primera vez,
+podra agregar un producto al carrito sin recibir ayuda externa. \\
+RNF-03 & Durante el proceso de pago, el sistema protegtera los datos
+personales y financieros de los usuarios frente a accesos no
+autorizados. \\
+RNF-04 & El sistema adaptara la visualizacion de su interfaz a
+diferentes tamanos de pantalla, incluyendo celulares, tabletas y
+computadoras. \\
+RNF-05 & El sistema estara disponible para los usuarios las 24 horas del
+dia, durante todos los dias del mes. \\
+\end{longtable}
 
-\section{Autoevaluaci\'on}
+% =====================================================================
+\begin{landscape}
+\section{Tabla de clasificacion}
+\label{sec:clasificacion}
 
-\section{Reflexi\'on}
+\begin{longtable}{>{\raggedright\arraybackslash}p{1.3cm}
+                  >{\raggedright\arraybackslash}p{6.6cm}
+                  >{\raggedright\arraybackslash}p{2.4cm}
+                  >{\raggedright\arraybackslash}p{4.2cm}
+                  >{\raggedright\arraybackslash}p{3.8cm}
+                  >{\raggedright\arraybackslash}p{4.2cm}}
+\caption{Clasificacion de los requisitos por tipo, caracteristica
+ISO/IEC 25010:2023, metrica y criterio de aceptacion.}
+\label{tab:clasificacion}\\
+\toprule
+\textbf{ID} & \textbf{Enunciado (resumido)} & \textbf{Tipo} &
+\textbf{ISO/IEC 25010} & \textbf{Metrica} & \textbf{Criterio de aceptacion} \\
+\midrule
+\endfirsthead
+\toprule
+\textbf{ID} & \textbf{Enunciado (resumido)} & \textbf{Tipo} &
+\textbf{ISO/IEC 25010} & \textbf{Metrica} & \textbf{Criterio de aceptacion} \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+RF-01 & Muestra el menu principal de navegacion al ingresar. & Funcional & --- & Cantidad de menus principales visibles. & Se muestra el menu principal al ingresar. \\
+RF-02 & Devuelve productos relacionados con el termino buscado. & Funcional & --- & Cantidad de resultados relacionados con la busqueda. & Se muestran productos relacionados con el termino ingresado. \\
+RF-03 & Muestra las cuatro categorias principales en el menu. & Funcional & --- & Cantidad de categorias principales visibles. & Se muestran las 4 categorias indicadas. \\
+RF-04 & Muestra articulos con imagen, nombre y precio al elegir categoria. & Funcional & --- & Cantidad de articulos con imagen, nombre y precio. & El 100\,\% de los articulos mostrados contiene los tres elementos. \\
+RF-05 & Incorpora al carrito el articulo seleccionado. & Funcional & --- & Cantidad de productos agregados correctamente. & El producto aparece en el carrito despues de agregarlo. \\
+RF-06 & Permite cambiar la cantidad de cada articulo en el carrito. & Funcional & --- & Cantidad de unidades modificadas correctamente. & La cantidad se actualiza correctamente en el carrito. \\
+RIE-01 & Muestra los ocho metodos de pago disponibles. & Interfaz externa & --- & Cantidad de metodos de pago visibles. & Se muestran las 8 opciones de pago identificadas. \\
+RR-01 & Limita el destino de envio del pedido a Ecuador. & Restriccion & --- & Cantidad de destinos de envio disponibles. & Ecuador aparece como destino y no se permite otro. \\
+RR-02 & Recopila solo los datos personales necesarios (LOPDP). & Restriccion & --- & Cantidad de campos sin finalidad justificada. & El 100\,\% de los campos tiene una finalidad identificada. \\
+RP-01 & Exige un acta de liberacion antes de publicar cada version. & Proceso & --- & Cantidad de actas aprobadas por version. & Cada version publicada cuenta con un acta aprobada. \\
+RNF-01 & Responde las busquedas en 3 s o menos (p95, 50 usuarios). & Calidad & Eficiencia de desempeno: comportamiento temporal & Tiempo de respuesta en segundos (p95). & En 100 busquedas con 50 usuarios concurrentes, el p95 es de 3 s o menos. \\
+RNF-02 & Un usuario nuevo agrega un producto sin ayuda externa. & Calidad & Capacidad de interaccion: capacidad de aprendizaje & Porcentaje de usuarios que completan la tarea en 5 min. & Al menos 9 de 10 usuarios nuevos lo logran en 5 min o menos. \\
+RNF-03 & Protege los datos de pago frente a accesos no autorizados. & Calidad & Seguridad: confidencialidad & Numero de accesos no autorizados exitosos. & Cero accesos no autorizados en 20 intentos de prueba. \\
+RNF-04 & Adapta la interfaz a celular, tableta y computadora. & Calidad & Flexibilidad: adaptabilidad & Numero de pruebas de visualizacion satisfactorias. & Las 30 pruebas en 375, 768 y 1366 px no presentan desbordamientos. \\
+RNF-05 & Permanece disponible 24 horas al dia, todos los dias. & Calidad & Fiabilidad: disponibilidad & Porcentaje de disponibilidad mensual. & Disponibilidad igual o superior al 99\,\%, medida cada 5 min. \\
+\end{longtable}
+\end{landscape}
 
-\section{Declaraci\'on de uso de IA}
-% Herramienta, version, proposito y como verificaste.
+% =====================================================================
+\section{Autoevaluacion}
+\label{sec:autoevaluacion}
 
+\setlength{\tabcolsep}{4pt}
+\begin{longtable}{>{\raggedright\arraybackslash}p{1.2cm}
+                  >{\raggedright\arraybackslash}p{4.0cm}
+                  >{\raggedright\arraybackslash}p{4.6cm}
+                  >{\raggedright\arraybackslash}p{4.6cm}}
+\caption{Requisitos que fallaron la autoevaluacion: version anterior y
+version corregida.}
+\label{tab:autoevaluacion}\\
+\toprule
+\textbf{ID} & \textbf{Caracteristica incumplida} &
+\textbf{Version anterior} & \textbf{Version corregida} \\
+\midrule
+\endfirsthead
+\toprule
+\textbf{ID} & \textbf{Caracteristica incumplida} &
+\textbf{Version anterior} & \textbf{Version corregida} \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+\falta{ID} & \falta{5.2.5 / 5.2.7} & \falta{texto} & \falta{texto} \\
+\falta{ID} & \falta{5.2.5 / 5.2.7} & \falta{texto} & \falta{texto} \\
+\falta{ID} & \falta{5.2.5 / 5.2.7} & \falta{texto} & \falta{texto} \\
+\end{longtable}
+
+% =====================================================================
+\section{Reflexion}
+\label{sec:reflexion}
+
+\falta{reflexion de media pagina sobre el tipo de requisito que costo mas
+formular y su causa, con un ejemplo concreto de este trabajo.}
+
+% =====================================================================
+\section{Declaracion de uso de inteligencia artificial}
+\label{sec:ia}
+
+Se utilizo un asistente de inteligencia artificial como apoyo en la
+infraestructura LaTeX del informe: estructura del documento, plantilla de
+tablas, archivo de referencias y resolucion de errores de compilacion.
+La seleccion del sistema, la descripcion, el analisis de la norma, el
+glosario, los requisitos, la autoevaluacion y la reflexion son de autoria
+de la estudiante y fueron verificados por ella antes de la entrega.
+\falta{completar: nombre y version exacta de la herramienta usada, y como
+se verifico lo obtenido.}
+
+% =====================================================================
 \bibliographystyle{IEEEtran}
 \bibliography{referencias}
+
 \end{document}

@@ -105,11 +105,11 @@ identificadores de requisito no se modificaron.
 ### Archivos
 
 - `TA-IND-02/main.tex`: archivo principal (fuente en LaTeX).
-- `TA-IND-02/main.pdf`: PDF compilado.
+- `TA-IND-02/main.pdf`: PDF compilado (se genera con los comandos de abajo; pendiente).
 - `TA-IND-02/referencias.bib`: referencias en estilo IEEE.
 - `TA-IND-02/datos/`: respuestas Kano y votación (CSV) y cálculos.
 - `TA-IND-02/evidencias/MANIFIESTO.md`: registro de participantes sin datos personales.
-- `TA-IND-02/entrega.tex` y `entrega.pdf`: PDF de una página para el SGA.
+- Pendiente para el cierre: `TA-IND-02/entrega.tex` y `TA-IND-02/entrega.pdf` (PDF de una página para el SGA).
 
 ### Compilador
 
@@ -117,18 +117,20 @@ identificadores de requisito no se modificaron.
 
 ### Dependencias
 
-Escribe aquí los paquetes que uses en `main.tex`.
+Los paquetes usados en `main.tex` son `inputenc`, `fontenc`, `babel-spanish`, `booktabs`, `graphicx` e `hyperref`. La bibliografía se procesa con BibTeX y el estilo `IEEEtran` (`IEEEtran.bst`), incluido en TeX Live y MiKTeX.
 
 ### Cómo compilar
 
 ```
-cd ISR401-SanchezRoselyn/TA-IND-02
+cd TA-IND-02
 pdflatex main.tex
 bibtex main
 pdflatex main.tex
 pdflatex main.tex
-pdflatex entrega.tex
 ```
+
+El resultado es `TA-IND-02/main.pdf`. La hoja de una página para el SGA (`entrega.tex` / `entrega.pdf`) se agregará al final de la actividad.
+
 ## Notas de entrega
 
 - El PDF de la tarea del SGA debe tener **una sola página** con los datos

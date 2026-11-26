@@ -100,6 +100,35 @@ Verificación: cada corrección se comparó con el texto original y se conservó
 solo cuando corregía una falta real; las cifras, las métricas y los
 identificadores de requisito no se modificaron.
 
+## TA-IND-02: Priorización con MoSCoW, Kano y votación ponderada
+
+### Archivos
+
+- `TA-IND-02/main.tex`: archivo principal (fuente en LaTeX).
+- `TA-IND-02/main.pdf`: PDF compilado.
+- `TA-IND-02/referencias.bib`: referencias en estilo IEEE.
+- `TA-IND-02/datos/`: respuestas Kano y votación (CSV) y cálculos.
+- `TA-IND-02/evidencias/MANIFIESTO.md`: registro de participantes sin datos personales.
+- `TA-IND-02/entrega.tex` y `entrega.pdf`: PDF de una página para el SGA.
+
+### Compilador
+
+- `pdflatex` y `bibtex` (TeX Live o MiKTeX)
+
+### Dependencias
+
+Escribe aquí los paquetes que uses en `main.tex`.
+
+### Cómo compilar
+
+```
+cd ISR401-SanchezRoselyn/TA-IND-02
+pdflatex main.tex
+bibtex main
+pdflatex main.tex
+pdflatex main.tex
+pdflatex entrega.tex
+```
 ## Notas de entrega
 
 - El PDF de la tarea del SGA debe tener **una sola página** con los datos

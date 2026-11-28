@@ -1,4 +1,4 @@
-\documentclass[11pt,a4paper]{article}
+\documentclass[10pt,a4paper]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{cmap}
@@ -7,6 +7,8 @@
 \usepackage{graphicx}
 \usepackage{float}
 \usepackage[hidelinks]{hyperref}
+\setlength{\textfloatsep}{6pt}
+\setlength{\intextsep}{4pt}
 
 \title{TA-IND-02: Priorización de requisitos con MoSCoW, Kano y votación ponderada\\
 \large Dominio: Centro de salud tipo A --- agendamiento y triaje}
@@ -23,16 +25,16 @@ Ingeniería de Requerimientos (ISR-401), UTEQ}
 \section{Priorización con MoSCoW}
 \input{secciones/02_moscow}
 
-\section{Análisis Kano}
+\section{Instrumento Kano}
 \input{secciones/03_instrumento_kano}
 
-\section{Votación ponderada}
+\section{Boletas de votación ponderada}
 \input{secciones/04_instrumento_votacion}
 
-\section{Resultados del análisis Kano}
+\section{Clasificación Kano}
 \input{secciones/05_resultados_kano}
 
-\section{Resultados de la votación ponderada}
+\section{Orden de votación ponderada}
 \input{secciones/06_resultados_votacion}
 
 \section{Comparación de técnicas}
@@ -48,7 +50,8 @@ En este trabajo se usó IA para la revisión ortográfica y la corrección de er
 La definición de las ocho características Kano, la redacción de los veinte requisitos, la clasificación MoSCoW con su justificación, la aplicación del cuestionario a cinco participantes reales, la obtención de la tabla de ponderación y de las tres boletas de 100 puntos, la validación de los resultados y la decisión final fueron revisadas y asumidas por la estudiante. No se generaron participantes, respuestas ni votos artificiales. Los cálculos se comprobaron con procedimientos equivalentes sobre los veinte requisitos y se verificó manualmente el empate de la tabla Kano. Los scripts \texttt{clasificar\_kano.py} y \texttt{calcular\_spearman.py} quedan disponibles en \texttt{datos/}. Las referencias se revisaron contra la información disponible; la comprobación en línea se realizó para Pohl (2025), Laplante y Kassab (2022) y Mkpojiogu y Hashim (2016).
 \end{sloppypar}
 
+\vspace*{-0.6cm}
 \bibliographystyle{IEEEtran}
-\bibliography{referencias}
+{\footnotesize\bibliography{referencias}}
 
 \end{document}

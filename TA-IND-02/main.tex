@@ -41,13 +41,15 @@ Ingeniería de Requerimientos (ISR-401), UTEQ}
 \input{secciones/08_decision}
 
 \section{Declaración de uso de inteligencia artificial}
-Durante este trabajo se utilizaron dos herramientas de inteligencia artificial como apoyo técnico, sin sustituir la recolección ni la validación de los datos reales.
+\begin{sloppypar}
+Durante este trabajo se utilizaron dos herramientas de inteligencia artificial. Se declara su intervención de forma precisa, incluidos los cambios realizados después de una revisión crítica del informe; el historial de commits conserva las versiones anteriores y no se ha reescrito.
 
-\textbf{Claude} (Anthropic, modelo Claude Sonnet 5.5, noviembre de 2026) se empleó para generar la estructura inicial del repositorio, plantillas vacías de los archivos CSV, de la tabla de requisitos, de las boletas y del consentimiento informado; para dar formato a las preguntas funcional y disfuncional de las ocho características Kano definidas por la estudiante; para generar la herramienta \texttt{clasificar\_kano.py}; y para ofrecer orientación metodológica general.
+\textbf{Claude} (Anthropic, modelo Claude Sonnet 5.5, noviembre de 2026) generó la estructura inicial del repositorio, plantillas vacías de los archivos CSV, de la tabla de requisitos, de las boletas y del consentimiento informado; dio formato a las preguntas funcional y disfuncional de las ocho características Kano definidas por la estudiante; generó la herramienta \texttt{clasificar\_kano.py}; y ofreció orientación metodológica general.
 
-\textbf{OpenCode} (modelo Big Pickle, identificador \texttt{big-pickle}, noviembre de 2026) se empleó como apoyo para revisar ortografía, corregir errores de compilación LaTeX, explicar el cálculo de Spearman y mantener los archivos de texto del repositorio.
+\textbf{OpenCode} (modelo Big Pickle, identificador \texttt{big-pickle}, noviembre de 2026) ayudó a adaptar el instrumento Kano y la boleta al dominio, escribió el script \texttt{calcular\_spearman.py} y las validaciones de los CSV, y redactó borradores de las secciones de resultados, comparación y decisión, además de revisar ortografía y corregir errores de compilación LaTeX. La estudiante revisó, corrigió y asumió esos borradores y scripts. Tras la revisión crítica se ajustó esta declaración para quitar una afirmación de autoría que contradecía el historial y para precisar el alcance real de la ayuda; ese cambio quedó registrado en commits posteriores.
 
 La definición de las ocho características Kano, la redacción de los veinte requisitos, la clasificación MoSCoW con su justificación, la aplicación del cuestionario a cinco participantes reales, la obtención de la tabla de ponderación y de las tres boletas de 100 puntos, la validación de los resultados y la decisión final fueron revisadas y asumidas por la estudiante. No se generaron participantes, respuestas ni votos artificiales. Los cálculos se comprobaron con procedimientos equivalentes sobre los veinte requisitos y se verificó manualmente el empate de la tabla Kano. Los scripts \texttt{clasificar\_kano.py} y \texttt{calcular\_spearman.py} quedan disponibles en \texttt{datos/}. Las referencias se revisaron contra la información disponible; la comprobación en línea se realizó para Pohl (2025) y Laplante y Kassab (2022).
+\end{sloppypar}
 
 \bibliographystyle{IEEEtran}
 \bibliography{referencias}

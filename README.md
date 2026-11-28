@@ -119,7 +119,7 @@ identificadores de requisito no se modificaron.
 
 ### Dependencias
 
-Los paquetes usados en `main.tex` y sus secciones son `inputenc`, `fontenc`, `babel-spanish`, `booktabs`, `graphicx` e `hyperref`. La bibliografía se procesa con BibTeX y el estilo `IEEEtran` (`IEEEtran.bst`), incluido en TeX Live y MiKTeX. El cálculo de Spearman usa Python 3 con la biblioteca estándar (`csv`, `math`, `collections`, `pathlib`).
+Los paquetes usados en `main.tex` y sus secciones son `inputenc`, `fontenc`, `babel-spanish`, `booktabs`, `graphicx`, `float` e `hyperref`. La bibliografía se procesa con BibTeX y el estilo `IEEEtran` (`IEEEtran.bst`), incluido en TeX Live y MiKTeX. El cálculo de Spearman usa Python 3 con la biblioteca estándar (`csv`, `math`, `collections`, `pathlib`).
 
 ### Cómo compilar
 

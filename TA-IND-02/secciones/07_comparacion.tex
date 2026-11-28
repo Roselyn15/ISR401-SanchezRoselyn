@@ -1,11 +1,11 @@
 ﻿\label{sec:comparacion}
-\subsection{Comparación de técnicas y correlación de Spearman}
+\subsection{Correlación de rangos}
 
-La comparación usa los mismos veinte requisitos. MoSCoW se convierte en escala ordinal con $M=4$, $S=3$, $C=2$ y $W=1$. Los totales de las tres boletas se ordenan de mayor a menor. El coeficiente de Spearman se calcula como correlación de Pearson entre rangos promediados; el script \texttt{datos/calcular\_spearman.py} reproduce el cálculo.
+La comparación usa los mismos veinte requisitos. MoSCoW se convierte en escala ordinal con $M=4$, $S=3$, $C=2$ y $W=1$. Los totales de las tres boletas se ordenan de mayor a menor. El coeficiente de Spearman se calcula como correlación de Pearson entre rangos promediados; el script \texttt{datos/calcular\_spearman.py} reproduce el cálculo, incluidos los valores por votante.
 
-Cada técnica prioriza con un criterio distinto \cite{pohl2025,laplante2022,wiegers2013,iso29148}: MoSCoW por \emph{viabilidad y obligatoriedad}, Kano por \emph{satisfacción del usuario} y la votación por \emph{preferencia relativa}. Kano entrega categorías, no un orden numérico; por eso la Tabla~\ref{tab:ordenes} muestra la categoría Kano vinculada cuando existe y el rango de votación para cada requisito.
+Cada técnica prioriza con un criterio distinto \cite{pohl2025,laplante2022,wiegers2013}: MoSCoW por \emph{viabilidad y obligatoriedad}, Kano por \emph{satisfacción del usuario} y la votación por \emph{preferencia relativa}. Kano entrega categorías, no un orden numérico de los veinte requisitos; por eso la Tabla~\ref{tab:ordenes} muestra la categoría vinculada cuando existe y el rango de votación de cada requisito. La Tabla~\ref{tab:orden_kano} agrupa las ocho características según M $>$ O $>$ A $>$ I \cite{mkpojiogu2016}.
 
-\begin{table}[H]
+\begin{table}[htbp]
 \centering
 \footnotesize
 \caption{Órdenes comparados: MoSCoW, categoría Kano vinculada y rango de votación.}
@@ -38,12 +38,42 @@ R20 & W & --- & 16 \\
 \end{tabular}
 \end{table}
 
+\begin{table}[htbp]
+\centering
+\footnotesize
+\caption{Características Kano ordenadas M $>$ O $>$ A $>$ I y su correlato votado.}
+\label{tab:orden_kano}
+\begin{tabular}{@{}lllll@{}}
+\toprule
+ID & Categoría & Requisito & MoSCoW & Rango \\
+\midrule
+K4 & M & R04, R06, R13 & M, M, S & 12, 6, 13 \\
+K7 & M & --- sin requisito & --- & --- \\
+K8 & M & --- sin requisito & --- & --- \\
+K1 & O & R01 & M & 2 \\
+K3 & O & --- sin requisito & --- & --- \\
+K2 & A & R02 & S & 9 \\
+K6 & A & R10 & M & 2 \\
+K5 & I & --- sin requisito & --- & --- \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Las filas con ``---'' no tienen requisito en el catálogo votado, por lo que no se les asigna MoSCoW ni rango. Este orden agrupa ocho características Kano, no constituye un tercer orden completo de los veinte requisitos.
+
 El resultado es $\rho = 0{,}7613$ con $n=20$. El valor indica una asociación positiva alta; la etiqueta \textbf{correlación moderada-alta} se usa solo de forma orientativa porque el kit no establece un umbral de corte. Las técnicas coinciden en la tendencia general, con desplazamientos puntuales.
 
 \begin{itemize}
-  \item \emph{Coincidencias}: R07 (rango 1), R01, R10, R14 y R17 (rango 2), R06 y R19 (rango 6) son Must y están en los primeros lugares de la votación. R04 es Must con 13 puntos (rango 12).
-  \item \emph{Discrepancias}: R03 (desempeño, Could) tiene rango 6 y R18 (facturación, Could) rango 11; R02 y R12 (Should) tienen rango 9. R20 (Won't have) queda en el tramo más bajo, coherente con su diferimiento.
-  \item \emph{Brechas Kano}: K3 (triaje), K7 (calificación) y K8 (medicamentos) son categorías M/O sin requisito en el catálogo votado; se documentan para la siguiente iteración. K5 (módulos) es indiferente y no se le atribuye relación directa con R11 ni R16.
+  \item \emph{Coincidencias}: R07 (rango 1), R01, R10, R14 y R17 (rango 2), R06 y R19 (rango 6) son Must y están en los primeros lugares de la votación.
+  \item \emph{Discrepancias}:
+  \begin{itemize}
+    \item R04 es Must pero quedó en el rango 12 (13 puntos), el más bajo de su grupo. \emph{Hipótesis no verificada}: los votantes pudieron valorar más la protección de datos y la disponibilidad que el registro manual, que además se solapa parcialmente con R13 en el quiosco. No hay notas ni entrevistas que confirmen la causa.
+    \item R03 (Could, rango 6, 18 puntos) y R18 (Could, rango 11, 14 puntos) igualan o superan a varios Must. \emph{Hipótesis no verificada}: el enunciado corto de R03 (``rápida'') es fácil de valorar sin una prueba de carga, mientras que R18 depende de interfaces externas y su beneficio puede ser menos visible para quien vota.
+    \item R02 y R12 (Should, rango 9, 15 puntos) quedan por debajo de Could como R03. \emph{Hipótesis no verificada}: los recordatorios y el cierre automático de sesión se perciben como controles complementarios y no como bloqueantes de la atención.
+  \end{itemize}
+  \item \emph{Brechas Kano}: K3 (triaje), K7 (calificación) y K8 (medicamentos) son categorías O/M sin requisito en el catálogo votado; se documentan para la siguiente iteración. K5 (módulos) es indiferente y no se le atribuye relación directa con R11 ni R16.
 \end{itemize}
+
+\emph{Limitación de la comparación}: la clasificación MoSCoW se construyó con la tabla de ponderación previa entregada (escala 3--5), junto con el criterio clínico y las dependencias entre requisitos. Por tanto $\rho$ \textbf{no compara dos órdenes independientes}: mide la consistencia entre una priorización ya informada por esa ponderación y las tres boletas. Al repetir el cálculo contra cada boleta por separado se obtiene $\rho = 0{,}717$ (V2), $0{,}7516$ (V3) y $0{,}4811$ (V4), es decir $0{,}72 / 0{,}75 / 0{,}48$ al redondear. El valor bajo de V4 se declara como limitación, no se corrige.
 
 \emph{Nota metodológica}: la correlación se calculó con las tres boletas oficiales de 100 puntos (V2, V3 y V4). La tabla inicial de escala 3--5 se conserva en \texttt{datos/ponderacion\_escala3a5.csv}, pero no se mezcla por usar otra escala.

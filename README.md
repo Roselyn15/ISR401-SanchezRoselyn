@@ -140,7 +140,7 @@ cd TA-IND-02
 pdflatex formatos/boleta_votacion_para_llenar.tex
 ```
 
-Para reproducir la correlación ($\rho = 0{,}7069$) con los CSV ya completos se ejecuta:
+Para reproducir la correlación ($\rho = 0{,}7170$) con los CSV ya completos se ejecuta:
 
 ```bash
 python datos/calcular_spearman.py
@@ -151,3 +151,4 @@ python datos/calcular_spearman.py
 - El PDF de la tarea del SGA debe tener **una sola página** con los datos
   informativos y la URL del repositorio en una sola línea.
 - La fecha de cierre de TA-IND-01 es el **sábado 7 de noviembre de 2026, 23:59**.
+

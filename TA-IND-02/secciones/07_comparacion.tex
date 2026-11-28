@@ -1,11 +1,11 @@
-\label{sec:comparacion}
+﻿\label{sec:comparacion}
 \subsection{Comparación de técnicas y correlación de Spearman}
 
 La comparación usa los mismos veinte requisitos. MoSCoW se convierte en escala ordinal con $M=4$, $S=3$, $C=2$ y $W=1$. La boleta V2 se ordena de mayor a menor puntaje. El coeficiente de Spearman se calcula como correlación de Pearson entre rangos promediados; el script \texttt{datos/calcular\_spearman.py} reproduce el cálculo.
 
 Cada técnica prioriza con un criterio distinto \cite{pohl2025,laplante2022,wiegers2013,iso29148}: MoSCoW por \emph{viabilidad y obligatoriedad} (qué debe estar para que el sistema sea operativo), Kano por \emph{satisfacción del usuario} (qué genera basicidad, desempeño o atractivo) y la votación por \emph{preferencia relativa} (qué recibe más puntos de quienes participan). Por eso no son intercambiables: una técnica puede ascender un requisito que otra deja en espera.
 
-El resultado es $\rho = 0{,}7069$ con $n=20$. Según la interpretación orientativa, corresponde a una \textbf{correlación moderada}: ambas técnicas coinciden en la tendencia general, pero no ordenan de idéntica forma todos los requisitos.
+El resultado es $\rho = 0{,}7170$ con $n=20$. Según la interpretación orientativa, corresponde a una \textbf{correlación moderada}: ambas técnicas coinciden en la tendencia general, pero no ordenan de idéntica forma todos los requisitos.
 
 \begin{itemize}
   \item \emph{Coincidencias}: R01 (9), R07 (8), R10, R14 y R17 (7), R06 (6), R19 (5) y R04 (4) son Must y están entre los puntajes más altos de la boleta. El núcleo obligatorio está respaldado por la votación.
@@ -14,3 +14,4 @@ El resultado es $\rho = 0{,}7069$ con $n=20$. Según la interpretación orientat
 \end{itemize}
 
 \emph{Limitación}: la correlación se calculó con \textbf{una boleta oficial de 100 puntos} (V2), no con las tres previstas en el kit. La tabla inicial de escala 3--5 se conserva en \texttt{datos/ponderacion\_escala3a5.csv}, pero no se mezcla con la boleta por usar otra escala. Por ello $\rho$ describe la concordancia con la información disponible y no sustituye el cálculo con las tres boletas.
+

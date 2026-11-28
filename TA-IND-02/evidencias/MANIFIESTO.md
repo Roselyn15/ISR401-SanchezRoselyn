@@ -1,6 +1,6 @@
 # Manifiesto de evidencia (sin datos personales)
 
-Solo se registran metadatos de los archivos custodiados en la carpeta institucional privada. No se publican nombres, cédulas, correos, firmas, rostros, voces ni audios. Los códigos ENT-01 a ENT-05 corresponden a los participantes del cuestionario Kano; V1 es la tabla inicial de ponderación y V2 es la boleta oficial de 100 puntos.
+Solo se registran metadatos. No se publican nombres, cédulas, correos, firmas, rostros, voces ni audios. ENT-01 a ENT-05 son los participantes del cuestionario Kano; V1 es la tabla inicial de ponderación y V2, V3 y V4 son las tres boletas oficiales de 100 puntos. La duración de las sesiones no fue registrada en los originales y no se estima para no inventar datos.
 
 | Código | Técnica | Archivo custodiado | Fecha | Duración | SHA-256 |
 |--------|---------|--------------------|-------|----------|---------|
@@ -11,7 +11,7 @@ Solo se registran metadatos de los archivos custodiados en la carpeta institucio
 | ENT-05 | Kano | `ENT-05.pdf` | 2026-11-27 | No registrada | `8B1E113A7320FE6B814098F02F541027A5F5119831403765C265C8B769521019` |
 | --- | Consentimiento | `consentimiento_TA-IND-02_DOM03.pdf` | 2026-11-27 | No registrada | `C001AB7BEA29A2D59ED46085D43990737D365A8DD51BCC1FDFFF78D185522ABA` |
 | --- | Instrumento | `cuestionario_kano_centro_salud (1).pdf` | 2026-11-27 | No registrada | `79DB7D1169E7C5DFCA2098A5CBA530A80D5EC1B421BC5C088347636EBDA75C2C` |
-| V1 | Ponderación previa | Tabla de ponderación entregada (20 requisitos, escala 3--5, total 85) | 2026-11-27 | No registrada | No aplica (digitada en `datos/ponderacion_escala3a5.csv`) |
-| V2 | Votación | Boleta oficial de 100 puntos llenada por una persona real (20 requisitos, total 100) | 2026-11-27 | No registrada | No aplica (transcrita de la boleta a `datos/votacion.csv`) |
+| V1 | Ponderación previa | `datos/ponderacion_escala3a5.csv` | 2026-11-27 | No registrada | `C2DB3182235B7A89DFF12927A8CAAFA5B01DAC805DB9FBF58F937D7205F9327D` |
+| V2, V3, V4 | Votación | `datos/votacion.csv` (60 filas, tres boletas de 100 puntos) | 2026-11-27 | No registrada | `9E6DB7639443FA2F8B89FCAA4E93B26BAEAE3DC48179E1054EFA7687181F3644` |
 
-Se recibió **una** boleta oficial de 100 puntos; faltan dos para completar las tres previstas en el kit de formatos. La tabla V1 se conserva aparte y no se mezcla con V2 por usar otra escala. Esta limitación se declara en el informe.
+La tabla V1 se conserva aparte y no se mezcla con las boletas oficiales por usar otra escala. Las tres boletas de 100 puntos están completas.

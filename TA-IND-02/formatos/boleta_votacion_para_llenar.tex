@@ -1,0 +1,57 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+\usepackage{booktabs}
+\usepackage[margin=1.8cm]{geometry}
+\pagestyle{empty}
+
+\begin{document}
+
+\begin{center}{\large\bfseries Boleta de votación ponderada --- formato en blanco}\end{center}
+
+\noindent\textbf{Código anónimo del participante:} \underline{\hspace{3cm}}
+\hfill \textbf{Fecha:} \underline{\hspace{3cm}}\\[4pt]
+
+\noindent\textbf{Instrucciones:} reparta \textbf{exactamente 100 puntos} entre los 20 requisitos. Use números enteros (de 0 a 100), sin negativos ni decimales. Puede asignar 0 a los requisitos que no le interesen. \textbf{No escriba su nombre} en esta boleta: solo el código anónimo.
+
+\vspace{5pt}
+
+\begin{center}
+\footnotesize
+\begin{tabular}{@{}l p{12.4cm} r@{}}
+\toprule
+ID & Requisito & Puntos \\
+\midrule
+R01 & Reservar citas médicas. & \\
+R02 & Enviar recordatorios por mensaje de texto. & \\
+R03 & La aplicación debe ser rápida. & \\
+R04 & Registrar la llegada de pacientes. & \\
+R05 & Desarrollar la plataforma en Java 21 y PostgreSQL. & \\
+R06 & Consultar pacientes del día y marcar consultas atendidas. & \\
+R07 & Proteger los datos de salud de los pacientes. & \\
+R08 & Funcionar en teléfonos Android 10 o superior. & \\
+R09 & Registrar cancelaciones tardías como inasistencias. & \\
+R10 & Ser fácil de utilizar para adultos mayores. & \\
+R11 & Entregar el proyecto en seis meses. & \\
+R12 & Cerrar automáticamente la sesión después de 10 minutos. & \\
+R13 & Registrar llegada e imprimir tickets en el quiosco. & \\
+R14 & Mantener la plataforma siempre disponible. & \\
+R15 & Generar reportes mensuales de inasistencias. & \\
+R16 & Validar cada incremento cada dos semanas. & \\
+R17 & Cumplir la Ley de Protección de Datos Personales. & \\
+R18 & Integrarse con el sistema de facturación actual. & \\
+R19 & Recuperar el servicio en menos de 30 minutos sin perder citas. & \\
+R20 & Revisar los cambios de código antes de integrarlos. & \\
+\midrule
+ & \textbf{Suma (debe ser exactamente 100)} & \textbf{\underline{\hspace{1.4cm}}} \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\vspace{4pt}
+\noindent\rule{\linewidth}{0.4pt}
+
+\noindent Entregue esta boleta con el consentimiento informado. Los datos se digitarán en \texttt{datos/votacion.csv} tal como fueron escritos.
+
+\end{document}

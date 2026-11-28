@@ -1,13 +1,14 @@
-\subsection{Regla de decisión y plan preliminar}
+﻿\subsection{Decisión final}
 
-La decisión final se toma con tres criterios en orden de importancia: (i) seguridad clínica y dependencia entre requisitos, (ii) clasificación MoSCoW resultante de las entrevistas y (iii) orden de la votación ponderada. Un requisito entra a la primera versión si es \emph{Must}, o si es \emph{Should} y el esfuerzo disponible lo permite después de cumplir el límite del 60\,\% para \emph{Must}. Los \emph{Could} quedan como reserva y los \emph{Won't have} se difieren a una segunda versión.
+Con $\rho = 0{,}6708$, las tres técnicas coinciden en lo esencial: el núcleo de la primera versión está formado por agendamiento, triaje, protección de datos, accesibilidad, disponibilidad y recuperación. Se decide:
 
-Según la Tabla~\ref{tab:esfuerzo}, el grupo \emph{Must} concentra 112 de 200 horas (56,0\,\%), dentro del límite del 60\,\%. Por ello el plan preliminar de entrega es:
+\begin{enumerate}
+  \item \textbf{Incluir en la versión 1} los ocho Must: R01, R04, R06, R07, R10, R14, R17 y R19. Su esfuerzo es 114 h (57,0\%), dentro del límite del 60\%.
+  \item \textbf{Incluir condicionalmente} los Should R02, R05, R09, R12, R13 y R15 (46 h) si la capacidad restante lo permite; R04 ya cubre el registro manual, por lo que R13 queda en segundo lugar dentro de este grupo.
+  \item \textbf{Promover a revisión prioritaria} R03 y R18: ambos recibieron 5 puntos en la ponderación y están como Could. Si el análisis de desempeño y las interfaces de facturación lo confirman, pasarán a Should antes del cierre del piloto.
+  \item \textbf{Diferir} R08, R11, R16 y R20. R20 permanece como Won't have; R08, R11 y R16 se mantienen como Could por su menor puntaje y su carácter de compatibilidad, planificación y proceso.
+  \item \textbf{Considerar Kano}: K2 (recordatorios) y K6 (accesibilidad) son atractivas; R02 ya está como Should y R10 como Must, por lo que no se requiere reordernar el plan. K5 (módulos) es indiferente y no justifica esfuerzo adicional en la primera versión.
+\end{enumerate}
 
-\begin{itemize}
-  \item incluir en la versión 1 los diez requisitos \emph{Must}: R01, R02, R03, R05, R06, R07, R08, R13, R15 y R16;
-  \item incorporar los seis \emph{Should} (R04, R09, R10, R11, R14, R17) si la capacidad restante lo permite;
-  \item mantener R12, R18 y R19 como \emph{Could}, y diferir R20 a la versión 2 por su costo de respaldo.
-\end{itemize}
+La decisión se apoya en la Tabla~\ref{tab:requisitos}, la Tabla~\ref{tab:esfuerzo}, los resultados Kano de la Tabla~\ref{tab:resultado_kano} y la ponderación de la Tabla~\ref{tab:ranking_votacion}, sin introducir requisitos ni participantes que no estén en los datos entregados.
 
-La decisión definitiva se confirmará cuando se disponga de las respuestas Kano reales y de la votación ponderada real. Si un requisito \emph{Should} resulta clasificado como Kano \emph{Must} u \emph{One-dimensional} y además obtiene alta votación, se promoverá a la primera versión; si un \emph{Must} resulta \emph{Indifferent} y recibe baja votación, se someterá a revisión, sin eliminar requisitos de seguridad clínica sin justificación.

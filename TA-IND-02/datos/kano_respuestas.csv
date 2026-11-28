@@ -1,1 +1,41 @@
 participante,caracteristica,respuesta_funcional,respuesta_disfuncional,categoria_kano
+ENT-01,Agendar citas,Me gusta,No me gusta,O
+ENT-01,Recordatorios,Me gusta,Lo tolero,A
+ENT-01,Clasificar la urgencia en el triaje,Me gusta,No me gusta,O
+ENT-01,Gestionar pacientes,Debe ser así,No me gusta,M
+ENT-01,Módulos diferentes,Debe ser así,Me da igual,I
+ENT-01,Mejor accesibilidad,Me gusta,Lo tolero,A
+ENT-01,Calificar la atención del personal,Me gusta,No me gusta,O
+ENT-01,Registro de medicamentos recetados,Debe ser así,No me gusta,M
+ENT-02,Agendar citas,Debe ser así,No me gusta,M
+ENT-02,Recordatorios,Debe ser así,No me gusta,M
+ENT-02,Clasificar la urgencia en el triaje,Debe ser así,No me gusta,M
+ENT-02,Gestionar pacientes,Me gusta,No me gusta,O
+ENT-02,Módulos diferentes,Me gusta,Lo tolero,A
+ENT-02,Mejor accesibilidad,Debe ser así,Lo tolero,I
+ENT-02,Calificar la atención del personal,Debe ser así,No me gusta,M
+ENT-02,Registro de medicamentos recetados,Me gusta,No me gusta,O
+ENT-03,Agendar citas,Me gusta,Me da igual,A
+ENT-03,Recordatorios,Me gusta,Me da igual,A
+ENT-03,Clasificar la urgencia en el triaje,Debe ser así,No me gusta,M
+ENT-03,Gestionar pacientes,Debe ser así,Lo tolero,I
+ENT-03,Módulos diferentes,Me da igual,Me da igual,I
+ENT-03,Mejor accesibilidad,Me gusta,Me da igual,A
+ENT-03,Calificar la atención del personal,Me gusta,Lo tolero,A
+ENT-03,Registro de medicamentos recetados,Debe ser así,Lo tolero,I
+ENT-04,Agendar citas,Debe ser así,Lo tolero,I
+ENT-04,Recordatorios,Me gusta,No me gusta,O
+ENT-04,Clasificar la urgencia en el triaje,Me gusta,No me gusta,O
+ENT-04,Gestionar pacientes,Debe ser así,No me gusta,M
+ENT-04,Módulos diferentes,Debe ser así,No me gusta,M
+ENT-04,Mejor accesibilidad,Debe ser así,No me gusta,M
+ENT-04,Calificar la atención del personal,Me gusta,No me gusta,O
+ENT-04,Registro de medicamentos recetados,Debe ser así,No me gusta,M
+ENT-05,Agendar citas,Me gusta,No me gusta,O
+ENT-05,Recordatorios,Debe ser así,Lo tolero,I
+ENT-05,Clasificar la urgencia en el triaje,Me gusta,No me gusta,O
+ENT-05,Gestionar pacientes,Me gusta,No me gusta,O
+ENT-05,Módulos diferentes,Me da igual,Lo tolero,I
+ENT-05,Mejor accesibilidad,Me gusta,No me gusta,O
+ENT-05,Calificar la atención del personal,Debe ser así,No me gusta,M
+ENT-05,Registro de medicamentos recetados,Me gusta,No me gusta,O

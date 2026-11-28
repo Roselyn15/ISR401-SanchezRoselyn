@@ -1,36 +1,39 @@
-% Requisitos propuestos para el centro de salud tipo A (agendamiento y triaje).
-% Pendiente de validación con las entrevistas reales; no se presentan como elicitados.
+﻿% Catálogo tomado de la tabla de ponderación entregada por la autora.
+% Las métricas marcadas como "propuesta" son criterios del analista, no respuestas de campo.
 \begin{table}[ht]
 \centering
 \footnotesize
-\caption{Requisitos formulados y su prioridad MoSCoW.}
+\caption{Requisitos del catálogo entregado y su clasificación MoSCoW \cite{iso29148,pohl2025}.}
 \label{tab:requisitos}
 \resizebox{\linewidth}{!}{%
-\begin{tabular}{@{}p{1.1cm}p{0.9cm}p{5.0cm}p{1.5cm}p{4.0cm}@{}}
+\begin{tabular}{@{}p{1.1cm}p{0.9cm}p{5.2cm}p{1.5cm}p{3.4cm}@{}}
 \toprule
-ID & Tipo & Enunciado (ISO/IEC/IEEE 29148) & MoSCoW & Justificación \\
+ID & Tipo & Enunciado & MoSCoW & Justificación \\
 \midrule
-R01 & F & El sistema debe registrar la identificación del paciente con cédula, nombres y fecha de nacimiento, rechazando duplicados & M & Base de toda historia clínica; sin ella fallan agenda y triaje \\
-R02 & F & El sistema debe permitir crear, modificar y cancelar citas por especialidad, fecha, hora y profesional & M & Núcleo del agendamiento; urgencia operativa diaria \\
-R03 & F & El sistema debe mostrar los cupos disponibles por fecha y especialidad, actualizados al confirmar cada cita & M & Evita doble reserva y reduce llamadas al centro \\
-R04 & F & El sistema debe enviar un recordatorio automático al paciente 24 horas antes de la cita & S & Reduce inasistencias, pero no bloquea la primera versión \\
-R05 & F & El sistema debe registrar el triaje con nivel de riesgo y signos vitales del paciente & M & Prioriza la atención clínica; requisito de seguridad \\
-R06 & F & El sistema debe asignar turno de atención según nivel de riesgo y orden de llegada & M & Implementa el triaje; sin él no hay priorización real \\
-R07 & F & El sistema debe permitir consultar y actualizar la historia clínica durante la consulta & M & Soporte directo de la atención médica \\
-R08 & F & El sistema debe registrar diagnóstico, tratamiento y prescripción de cada consulta & M & Trazabilidad clínica obligatoria \\
-R09 & F & El sistema debe generar una orden de laboratorio o imagen y asociarla a la historia clínica & S & Necesario, pero puede diferirse a la segunda iteración \\
-R10 & F & El sistema debe notificar al paciente cuando un resultado esté disponible & S & Mejora experiencia; no impedimento para iniciar \\
-R11 & F & El sistema debe gestionar usuarios, roles y horarios de los profesionales & S & Control administrativo; se puede operar con roles básicos \\
-R12 & F & El sistema debe generar un reporte diario de citas atendidas, canceladas y pendientes & C & Útil para gestión, no crítico para la primera versión \\
-R13 & C & El sistema debe estar operativo al menos 99,5\% del tiempo mensual, medido por monitorización & M & Caída prolongada detiene agenda y triaje \\
-R14 & C & El sistema debe responder consultas de cupos en $\le 2$ s para el 95\% de peticiones & S & Afecta fluidez, pero tolerable en el piloto \\
-R15 & C & El sistema debe rechazar el 100\% de registros con cédula duplicada o campos vacíos & M & Integridad de datos clínicos \\
-R16 & C & El sistema debe cifrar la historia clínica en tránsito y reposo con TLS 1.2 y AES-256 & M & Cumplimiento de protección de datos de salud \\
-R17 & C & El sistema debe registrar cada cambio con usuario, fecha y hora, conservando 24 meses & S & Auditoría importante, diferible al cierre del piloto \\
-R18 & C & El sistema debe permitir agendar en $\le 3$ min al 90\% de usuarios sin capacitación & C & Mejora usabilidad; se evaluará con pruebas posteriores \\
-R19 & C & El sistema debe funcionar en Chrome, Firefox y Edge en sus dos últimas versiones & C & Compatibilidad amplia, no bloqueante \\
-R20 & C & El sistema debe respaldar diariamente con RPO $\le 15$ min y RTO $\le 4$ h & W & Costo alto; se pospone a segunda versión \\
+R01 & F & El sistema debe permitir reservar citas médicas. & M & Función central del agendamiento \\
+R02 & F & El sistema debe enviar recordatorios por mensaje de texto. & S & Reduce inasistencias; no bloquea la versión 1 \\
+R03 & C & El sistema debe responder en $\le 2$ s al 95\% de peticiones (métrica propuesta). & C & Desempeño deseable, verificable con pruebas \\
+R04 & F & El sistema debe registrar la llegada de pacientes. & M & Entrada obligatoria al flujo de triaje \\
+R05 & F & El sistema debe desarrollarse en Java 21 y PostgreSQL. & S & Restricción tecnológica acordada, diferible si hay riesgo \\
+R06 & F & El sistema debe consultar pacientes del día y marcar consultas atendidas. & M & Cierre operativo de la jornada \\
+R07 & F & El sistema debe proteger los datos de salud de los pacientes. & M & Seguridad clínica y confidencialidad \\
+R08 & C & El sistema debe funcionar en teléfonos Android 10 o superior. & C & Compatibilidad amplia, no bloqueante \\
+R09 & F & El sistema debe registrar cancelaciones tardías como inasistencias. & S & Regla administrativa importante pero no crítica \\
+R10 & C & El sistema debe ser fácil de usar para adultos mayores ($\le 3$ min al 90\%, métrica propuesta). & M & Accesibilidad del grupo prioritario \\
+R11 & C & El proyecto debe entregarse en seis meses. & C & Restricción de planificación, no funcionalidad \\
+R12 & F & El sistema debe cerrar automáticamente la sesión después de 10 minutos. & S & Control de seguridad complementario \\
+R13 & F & El sistema debe registrar la llegada e imprimir tickets en el quiosco. & S & Automatización útil; el registro manual ya cubre R04 \\
+R14 & C & El sistema debe mantenerse disponible al menos 99,5\% mensual (métrica propuesta). & M & Continuidad del servicio de salud \\
+R15 & F & El sistema debe generar reportes mensuales de inasistencias. & S & Apoyo a la gestión, no urgente \\
+R16 & C & El sistema debe validar cada incremento cada dos semanas. & C & Práctica de calidad, diferible al piloto \\
+R17 & C & El sistema debe cumplir la Ley de Protección de Datos Personales. & M & Requisito legal obligatorio \\
+R18 & F & El sistema debe integrarse con el sistema de facturación actual. & C & Integración de valor, dependiente de interfaces externas \\
+R19 & C & El sistema debe recuperarse en menos de 30 minutos sin perder citas. & M & Continuidad y durabilidad de la información \\
+R20 & F & El sistema debe revisar los cambios de código antes de integrarlos. & W & Práctica de desarrollo; se difiere a la versión 2 \\
 \bottomrule
 \end{tabular}%
 }
 \end{table}
+
+La tabla contiene 12 requisitos funcionales (R01, R02, R04, R05, R06, R07, R09, R12, R13, R15, R18, R20) y 8 de calidad (R03, R08, R10, R11, R14, R16, R17, R19). Las métricas de R03, R10 y R14 son propuestas del analista para hacer verificables los enunciados cualitativos del catálogo entregado; no se atribuyen a los entrevistados.
+

@@ -107,9 +107,9 @@ identificadores de requisito no se modificaron.
 - `TA-IND-02/main.tex`: archivo principal (fuente en LaTeX).
 - `TA-IND-02/main.pdf`: PDF compilado del informe.
 - `TA-IND-02/referencias.bib`: referencias en estilo IEEE.
-- `TA-IND-02/secciones/`: propuesta de 20 requisitos, clasificación MoSCoW con control de esfuerzo, instrumento Kano, boleta de votación y procedimientos de resultados, comparación y decisión.
-- `TA-IND-02/datos/`: cabeceras de `kano_respuestas.csv`, `votacion.csv` y `moscow.csv`, guía de formato y script `calcular_spearman.py`.
-- `TA-IND-02/evidencias/MANIFIESTO.md`: plantilla del registro de participantes sin datos personales.
+- `TA-IND-02/secciones/`: catálogo de 20 requisitos, clasificación MoSCoW con control de esfuerzo, instrumento y resultados Kano, ponderación, comparación y decisión.
+- `TA-IND-02/datos/`: respuestas reales de 5 participantes en `kano_respuestas.csv`, ponderación entregada en `votacion.csv`, clasificación en `moscow.csv`, guía de formato y script `calcular_spearman.py`.
+- `TA-IND-02/evidencias/MANIFIESTO.md`: metadatos (archivo, fecha, SHA-256) de la evidencia custodiada, sin datos personales.
 - `TA-IND-02/entrega.tex` y `TA-IND-02/entrega.pdf`: PDF de una página para el SGA.
 
 ### Compilador
@@ -132,7 +132,7 @@ pdflatex entrega.tex
 pdflatex entrega.tex
 ```
 
-El resultado es `TA-IND-02/main.pdf` y la hoja de una página `TA-IND-02/entrega.pdf`. Para calcular la correlación, después de completar los CSV con datos reales se ejecuta:
+El resultado es `TA-IND-02/main.pdf` y la hoja de una página `TA-IND-02/entrega.pdf`. Para reproducir la correlación ($\rho = 0{,}6708$) con los CSV ya completos se ejecuta:
 
 ```bash
 python datos/calcular_spearman.py

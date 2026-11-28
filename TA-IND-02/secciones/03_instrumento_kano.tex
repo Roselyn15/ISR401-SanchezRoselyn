@@ -1,25 +1,25 @@
 \subsection{Instrumento del cuestionario Kano}
 
-El cuestionario se aplica sobre ocho características del centro de salud tipo A. Para cada característica se formulan dos preguntas: una funcional, que indaga la reacción del entrevistado cuando la característica está presente, y una disfuncional, que indaga la reacción cuando está ausente. Las cinco respuestas permitidas son: \emph{me gusta}, \emph{debe ser así}, \emph{me da igual}, \emph{lo tolero} y \emph{no me gusta}.
+El cuestionario aplicado \cite{kano1993} contiene ocho características del centro de salud tipo A. Para cada característica se formulan dos preguntas: una funcional, que indaga la reacción cuando la característica está presente, y una disfuncional, que indaga la reacción cuando está ausente. Las cinco respuestas permitidas son: \emph{me gusta}, \emph{debe ser así}, \emph{me da igual}, \emph{lo tolero} y \emph{no me gusta}. Fue aplicado a cinco participantes con códigos ENT-01 a ENT-05.
 
 \begin{table}[ht]
 \centering
 \footnotesize
-\caption{Parejas de preguntas funcionales y disfuncionales del cuestionario Kano.}
+\caption{Parejas de preguntas del cuestionario Kano aplicado.}
 \label{tab:kano_preguntas}
 \resizebox{\linewidth}{!}{%
-\begin{tabular}{@{}p{1.0cm}p{2.8cm}p{4.6cm}p{4.6cm}@{}}
+\begin{tabular}{@{}p{1.0cm}p{3.0cm}p{4.5cm}p{4.5cm}@{}}
 \toprule
 ID & Característica & Pregunta funcional & Pregunta disfuncional \\
 \midrule
-K1 & Identificación única del paciente & ¿Qué sentiría si el sistema asignara un identificador único al paciente? & ¿Qué sentiría si el sistema no asignara un identificador único? \\
-K2 & Agenda por especialidad & ¿Qué sentiría si pudiera agendar citas filtrando por especialidad? & ¿Qué sentiría si solo existiera una lista general de citas? \\
-K3 & Recordatorio automático & ¿Qué sentiría si el sistema enviara un recordatorio automático de la cita? & ¿Qué sentiría si no existiera ningún recordatorio? \\
-K4 & Triaje por nivel de riesgo & ¿Qué sentiría si el sistema clasificara el riesgo del paciente en el triaje? & ¿Qué sentiría si el triaje no clasificara el riesgo? \\
-K5 & Historia clínica electrónica & ¿Qué sentiría si la historia clínica estuviera disponible en el sistema? & ¿Qué sentiría si la historia clínica se mantuviera solo en papel? \\
-K6 & Disponibilidad de cupos & ¿Qué sentiría si pudiera consultar los cupos libres en tiempo real? & ¿Qué sentiría si los cupos solo se conocieran al llamar al centro? \\
-K7 & Registro de signos vitales & ¿Qué sentiría si el sistema permitiera registrar signos vitales durante el triaje? & ¿Qué sentiría si los signos vitales no se registraran en el sistema? \\
-K8 & Estadísticas de atención & ¿Qué sentiría si el sistema mostrara estadísticas diarias de atención? & ¿Qué sentiría si no hubiera estadísticas de atención? \\
+K1 & Agendar citas & ¿Qué sentiría si el sistema le permite agendar citas? & ¿Qué sentiría si el sistema NO le permite agendar citas? \\
+K2 & Recordatorios & ¿Qué sentiría si el sistema hace recordatorios de las citas? & ¿Qué sentiría si el sistema NO hace recordatorios? \\
+K3 & Clasificar la urgencia en el triaje & ¿Qué sentiría si el sistema clasifica el nivel de urgencia? & ¿Qué sentiría si el sistema NO clasifica el nivel de urgencia? \\
+K4 & Gestionar pacientes & ¿Qué sentiría si el sistema permite gestionar pacientes? & ¿Qué sentiría si el sistema NO permite gestionar pacientes? \\
+K5 & Módulos diferentes & ¿Qué sentiría si el sistema está organizado en módulos? & ¿Qué sentiría si el sistema NO está organizado en módulos? \\
+K6 & Mejor accesibilidad & ¿Qué sentiría si el sistema tiene mejor accesibilidad? & ¿Qué sentiría si el sistema NO tiene mejor accesibilidad? \\
+K7 & Calificar la atención del personal & ¿Qué sentiría si el paciente puede calificar la atención recibida? & ¿Qué sentiría si el paciente NO puede calificar la atención? \\
+K8 & Registro de medicamentos recetados & ¿Qué sentiría si el sistema registra los medicamentos recetados? & ¿Qué sentiría si el sistema NO registra los medicamentos? \\
 \bottomrule
 \end{tabular}%
 }
@@ -33,18 +33,18 @@ La tabla de evaluación utilizada para asignar la categoría de cada respuesta s
 \caption{Tabla de evaluación del modelo Kano.}
 \label{tab:kano_matriz}
 \resizebox{\linewidth}{!}{%
-\begin{tabular}{@{}p{2.4cm}p{2.0cm}p{2.0cm}p{2.0cm}p{2.0cm}p{2.0cm}@{}}
+\begin{tabular}{@{}p{2.4cm}p{1.8cm}p{1.8cm}p{1.8cm}p{1.8cm}p{1.8cm}@{}}
 \toprule
 Funcional $\backslash$ Disfuncional & Me gusta & Debe ser & Da igual & Lo tolero & No gusta \\
 \midrule
 Me gusta   & Q & A & A & A & O \\
-Debe ser   & Q & I & I & I & M \\
-Da igual   & Q & I & I & I & M \\
-Lo tolero  & Q & I & I & I & M \\
+Debe ser   & R & I & I & I & M \\
+Da igual   & R & I & I & I & M \\
+Lo tolero  & R & I & I & I & M \\
 No gusta   & R & R & R & R & Q \\
 \bottomrule
 \end{tabular}%
 }
 \end{table}
 
-La categoría final de cada característica se obtiene por mayoría simple de las categorías asignadas a las respuestas de los participantes; en caso de empate se prioriza M sobre O, A, I, R y Q.
+La categoría final de cada característica se obtiene por mayoría simple de las cinco respuestas. En caso de empate se aplica el criterio declarado por la autora: M $\succ$ O $\succ$ A $\succ$ I $\succ$ R $\succ$ Q, priorizando las categorías que implican obligatoriedad o desempeño sobre las indiferentes o inversas.

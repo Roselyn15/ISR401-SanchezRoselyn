@@ -1,26 +1,28 @@
-\subsection{Procedimiento de clasificación y presentación de resultados}
+\subsection{Resultados del análisis Kano}
 
-Una vez aplicado el instrumento de la Tabla~\ref{tab:kano_preguntas} a las cinco personas reales del dominio, cada pareja de respuestas se codifica con la Tabla~\ref{tab:kano_matriz}. La categoría final de cada característica $K1$ a $K8$ se obtiene por mayoría simple; si hay empate, se aplica el orden de prioridad M, O, A, I, R y Q. El resultado se registra en \texttt{datos/kano\_respuestas.csv} y se resume en una tabla con las columnas: característica, categoría asignada y frecuencias de M, O, A, I, R y Q.
+Las 40 respuestas de los cinco participantes se clasificaron con la Tabla~\ref{tab:kano_matriz}. El resumen por característica se muestra en la Tabla~\ref{tab:resultado_kano}. En K4, K7 y K8 hubo empate entre M y O; se aplicó el criterio declarado en la Sección~3, que prioriza M sobre O.
 
 \begin{table}[ht]
 \centering
 \footnotesize
-\caption{Estructura de presentación de los resultados Kano (sin datos reales aún).}
+\caption{Clasificación Kano resultante (5 participantes).}
 \label{tab:resultado_kano}
-\begin{tabular}{@{}llc@{}}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{@{}p{1.0cm}p{4.6cm}p{4.0cm}c@{}}
 \toprule
-Característica & Categoría final & Frecuencias (M/O/A/I/R/Q) \\
+ID & Característica & Frecuencias (M/O/A/I/R/Q) & Final \\
 \midrule
-K1 & \emph{Pendiente de datos reales} & --- \\
-K2 & \emph{Pendiente de datos reales} & --- \\
-K3 & \emph{Pendiente de datos reales} & --- \\
-K4 & \emph{Pendiente de datos reales} & --- \\
-K5 & \emph{Pendiente de datos reales} & --- \\
-K6 & \emph{Pendiente de datos reales} & --- \\
-K7 & \emph{Pendiente de datos reales} & --- \\
-K8 & \emph{Pendiente de datos reales} & --- \\
+K1 & Agendar citas & 1/2/1/1/0/0 & O \\
+K2 & Recordatorios & 1/1/2/1/0/0 & A \\
+K3 & Clasificar la urgencia en el triaje & 2/3/0/0/0/0 & O \\
+K4 & Gestionar pacientes & 2/2/0/1/0/0 & M \\
+K5 & Módulos diferentes & 1/0/1/3/0/0 & I \\
+K6 & Mejor accesibilidad & 1/1/2/1/0/0 & A \\
+K7 & Calificar la atención del personal & 2/2/1/0/0/0 & M \\
+K8 & Registro de medicamentos recetados & 2/2/0/1/0/0 & M \\
 \bottomrule
-\end{tabular}
+\end{tabular}%
+}
 \end{table}
 
-No se reporta ninguna categoría definitiva mientras no existan las respuestas reales de los cinco participantes. Cualquier clasificación presentada antes de ese paso sería evidencia fabricada y se excluye de este informe.
+Las características M y O (K1, K3, K4, K7, K8) deben conservarse en la primera versión. Las atractivas K2 y K6 son candidatas a incrementar satisfacción si hay capacidad. La característica indiferente K5 puede diferirse sin impacto percibido. No aparecieron categorías R ni Q.

@@ -1,11 +1,23 @@
-\subsection{Cálculo de totales y orden de prioridad}
+\subsection{Resultados de la ponderación disponible}
 
-Cada uno de los tres participantes reparte 100 puntos entre los veinte requisitos. Antes del cálculo se verifica que la suma de cada columna sea exactamente 100. El puntaje total de un requisito es la suma de las tres columnas:
+La tabla entregada tiene un total de 85 puntos. El orden se construye de mayor a menor puntaje, usando rango competitivo con empate: los nueve requisitos con 5 puntos comparten el rango 1, los siete con 4 puntos el rango 10 y los cuatro con 3 puntos el rango 17.
 
-\begin{equation}
-V(R_i)=\sum_{j=1}^{3} p_{j,i},
-\end{equation}
+\begin{table}[ht]
+\centering
+\footnotesize
+\caption{Orden de prioridad según la ponderación entregada.}
+\label{tab:ranking_votacion}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{@{}cccc@{}}
+\toprule
+Rango & Puntos & Requisitos & Cantidad \\
+\midrule
+1 & 5 & R01, R03, R06, R07, R10, R14, R17, R18, R19 & 9 \\
+10 & 4 & R02, R04, R05, R09, R12, R13, R15 & 7 \\
+17 & 3 & R08, R11, R16, R20 & 4 \\
+\bottomrule
+\end{tabular}%
+}
+\end{table}
 
-donde $p_{j,i}$ son los puntos asignados por el votante $j$ al requisito $R_i$. El orden de prioridad se construye ordenando los requisitos de mayor a menor $V(R_i)$. Los resultados se registrarán en \texttt{datos/votacion.csv} y se presentarán en una tabla con el total y el rango de cada requisito.
-
-Hasta que se registren las tres boletas reales, la Tabla~\ref{tab:votacion} permanece como plantilla y no se presenta ningún total ni ranking. No se generan votos de prueba: hacerlo convertiría la técnica en evidencia inventada.
+De los ocho requisitos Must, siete recibieron 5 puntos (R01, R06, R07, R10, R14, R17 y R19) y uno recibió 4 (R04). Ningún Must quedó por debajo de 4 puntos. Los otros dos requisitos con 5 puntos, R03 y R18, están clasificados como Could; son los principales candidatos a revisión por discrepancia. La limitación de disponer de una sola tabla se reitera en la comparación.

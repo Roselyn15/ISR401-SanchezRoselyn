@@ -40,7 +40,15 @@ Ingeniería de Requerimientos (ISR-401), UTEQ}
 \input{secciones/08_decision}
 
 \section{Declaración de uso de inteligencia artificial}
-La estructura inicial del repositorio (README, \texttt{.gitignore} y el esqueleto de este informe) se elaboró con apoyo de OpenCode, modelo Big Pickle, en noviembre de 2026. El kit de formatos y la herramienta \texttt{clasificar\_kano.py} se generaron con Claude (Anthropic), según se declara en \texttt{LEEME.txt} de dicho kit. Los instrumentos adaptados, la boleta, el script de Spearman y la redacción final se elaboraron con OpenCode, modelo Big Pickle. Todo fue revisado por la autora. Las respuestas de los cinco participantes se transcribieron de los cuestionarios firmados y la ponderación se tomó de la tabla entregada; no se generaron participantes, respuestas ni votos artificiales.
+Durante este trabajo se utilizaron dos herramientas de inteligencia artificial como apoyo.
+
+\textbf{Claude} (Anthropic, modelo Claude Sonnet 5.5, noviembre de 2026) se empleó para:
+(i) generar la estructura inicial del repositorio (README, \texttt{.gitignore}, carpetas, esqueleto de este documento y plantilla del manifiesto); (ii) generar plantillas vacías de los archivos CSV, de la tabla de requisitos, de las boletas y del consentimiento informado; (iii) dar formato de pregunta funcional y disfuncional a las ocho características Kano definidas por la autora; (iv) generar la herramienta \texttt{clasificar\_kano.py}; y (v) ofrecer orientación metodológica y estimaciones de calificación según la rúbrica.
+
+\textbf{OpenCode} (modelo Big Pickle, identificador \texttt{big-pickle}, noviembre de 2026) se empleó para:
+(i) adaptar el instrumento Kano y la boleta de votación al dominio del centro de salud; (ii) redactar el script \texttt{calcular\_spearman.py} y ajustar la validación de los CSV; (iii) elaborar las secciones de resultados, comparación y decisión final; y (iv) revisar la redacción y corregir la maquetación LaTeX de todo el informe.
+
+La definición de las ocho características Kano, la redacción de los veinte requisitos, la clasificación MoSCoW con su justificación, la aplicación del cuestionario a cinco participantes reales, la obtención de la tabla de ponderación entregada, el análisis de resultados y la decisión final son de autoría de la estudiante. No se generaron participantes, respuestas ni votos artificiales. Todo contenido generado fue revisado, probado y, cuando correspondió, modificado por la autora. El cálculo de la correlación se comprobó con un procedimiento equivalente sobre los veinte requisitos y se verificó manualmente el caso de empate de la tabla Kano; el script queda listo para ejecutarse con \texttt{python datos/calcular\_spearman.py}. Las referencias bibliográficas se verificaron contra los datos bibliográficos de las obras citadas.
 
 \bibliographystyle{IEEEtran}
 \bibliography{referencias}

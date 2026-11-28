@@ -1,5 +1,5 @@
-% Plantilla de la tabla de requisitos. Completar una fila por requisito.
-% Tipo: F (funcional) o C (calidad cuantificado). MoSCoW: M, S, C o W.
+% Requisitos propuestos para el centro de salud tipo A (agendamiento y triaje).
+% Pendiente de validación con las entrevistas reales; no se presentan como elicitados.
 \begin{table}[ht]
 \centering
 \footnotesize
@@ -10,26 +10,26 @@
 \toprule
 ID & Tipo & Enunciado (ISO/IEC/IEEE 29148) & MoSCoW & Justificación \\
 \midrule
-R01 &  &  &  &  \\
-R02 &  &  &  &  \\
-R03 &  &  &  &  \\
-R04 &  &  &  &  \\
-R05 &  &  &  &  \\
-R06 &  &  &  &  \\
-R07 &  &  &  &  \\
-R08 &  &  &  &  \\
-R09 &  &  &  &  \\
-R10 &  &  &  &  \\
-R11 &  &  &  &  \\
-R12 &  &  &  &  \\
-R13 &  &  &  &  \\
-R14 &  &  &  &  \\
-R15 &  &  &  &  \\
-R16 &  &  &  &  \\
-R17 &  &  &  &  \\
-R18 &  &  &  &  \\
-R19 &  &  &  &  \\
-R20 &  &  &  &  \\
+R01 & F & El sistema debe registrar la identificación del paciente con cédula, nombres y fecha de nacimiento, rechazando duplicados & M & Base de toda historia clínica; sin ella fallan agenda y triaje \\
+R02 & F & El sistema debe permitir crear, modificar y cancelar citas por especialidad, fecha, hora y profesional & M & Núcleo del agendamiento; urgencia operativa diaria \\
+R03 & F & El sistema debe mostrar los cupos disponibles por fecha y especialidad, actualizados al confirmar cada cita & M & Evita doble reserva y reduce llamadas al centro \\
+R04 & F & El sistema debe enviar un recordatorio automático al paciente 24 horas antes de la cita & S & Reduce inasistencias, pero no bloquea la primera versión \\
+R05 & F & El sistema debe registrar el triaje con nivel de riesgo y signos vitales del paciente & M & Prioriza la atención clínica; requisito de seguridad \\
+R06 & F & El sistema debe asignar turno de atención según nivel de riesgo y orden de llegada & M & Implementa el triaje; sin él no hay priorización real \\
+R07 & F & El sistema debe permitir consultar y actualizar la historia clínica durante la consulta & M & Soporte directo de la atención médica \\
+R08 & F & El sistema debe registrar diagnóstico, tratamiento y prescripción de cada consulta & M & Trazabilidad clínica obligatoria \\
+R09 & F & El sistema debe generar una orden de laboratorio o imagen y asociarla a la historia clínica & S & Necesario, pero puede diferirse a la segunda iteración \\
+R10 & F & El sistema debe notificar al paciente cuando un resultado esté disponible & S & Mejora experiencia; no impedimento para iniciar \\
+R11 & F & El sistema debe gestionar usuarios, roles y horarios de los profesionales & S & Control administrativo; se puede operar con roles básicos \\
+R12 & F & El sistema debe generar un reporte diario de citas atendidas, canceladas y pendientes & C & Útil para gestión, no crítico para la primera versión \\
+R13 & C & El sistema debe estar operativo al menos 99,5\% del tiempo mensual, medido por monitorización & M & Caída prolongada detiene agenda y triaje \\
+R14 & C & El sistema debe responder consultas de cupos en $\le 2$ s para el 95\% de peticiones & S & Afecta fluidez, pero tolerable en el piloto \\
+R15 & C & El sistema debe rechazar el 100\% de registros con cédula duplicada o campos vacíos & M & Integridad de datos clínicos \\
+R16 & C & El sistema debe cifrar la historia clínica en tránsito y reposo con TLS 1.2 y AES-256 & M & Cumplimiento de protección de datos de salud \\
+R17 & C & El sistema debe registrar cada cambio con usuario, fecha y hora, conservando 24 meses & S & Auditoría importante, diferible al cierre del piloto \\
+R18 & C & El sistema debe permitir agendar en $\le 3$ min al 90\% de usuarios sin capacitación & C & Mejora usabilidad; se evaluará con pruebas posteriores \\
+R19 & C & El sistema debe funcionar en Chrome, Firefox y Edge en sus dos últimas versiones & C & Compatibilidad amplia, no bloqueante \\
+R20 & C & El sistema debe respaldar diariamente con RPO $\le 15$ min y RTO $\le 4$ h & W & Costo alto; se pospone a segunda versión \\
 \bottomrule
 \end{tabular}%
 }

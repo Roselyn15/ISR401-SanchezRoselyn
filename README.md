@@ -107,7 +107,7 @@ identificadores de requisito no se modificaron.
 - `TA-IND-02/main.tex`: archivo principal (fuente en LaTeX).
 - `TA-IND-02/main.pdf`: PDF compilado del informe.
 - `TA-IND-02/referencias.bib`: referencias en estilo IEEE.
-- `TA-IND-02/secciones/`: plantilla de requisitos, instrumento Kano y boleta de votación.
+- `TA-IND-02/secciones/`: propuesta de 20 requisitos, clasificación MoSCoW con control de esfuerzo, instrumento Kano y boleta de votación.
 - `TA-IND-02/datos/`: cabeceras de `kano_respuestas.csv`, `votacion.csv` y `moscow.csv`, guía de formato y script `calcular_spearman.py`.
 - `TA-IND-02/evidencias/MANIFIESTO.md`: plantilla del registro de participantes sin datos personales.
 - `TA-IND-02/entrega.tex` y `TA-IND-02/entrega.pdf`: PDF de una página para el SGA.

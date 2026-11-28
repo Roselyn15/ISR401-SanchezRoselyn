@@ -1,0 +1,26 @@
+\subsection{Clasificación MoSCoW y control de esfuerzo}
+
+MoSCoW separa los requisitos en cuatro clases: \emph{Must} (imprescindibles para que la primera versión sea operativa), \emph{Should} (importantes pero no bloqueantes), \emph{Could} (deseables si hay capacidad) y \emph{Won't have} (diferidos a otra versión). La asignación se hizo con criterio de riesgo clínico, dependencia entre requisitos y costo estimado.
+
+\begin{table}[ht]
+\centering
+\footnotesize
+\caption{Esfuerzo estimado por categoría MoSCoW.}
+\label{tab:esfuerzo}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{@{}llrrr@{}}
+\toprule
+Categoría & Requisitos & Horas & \% del total & Estado \\
+\midrule
+Must (M) & R01, R02, R03, R05, R06, R07, R08, R13, R15, R16 & 112 & 56,0\% & $\le 60\%$ \\
+Should (S) & R04, R09, R10, R11, R14, R17 & 54 & 27,0\% & dentro de plazo \\
+Could (C) & R12, R18, R19 & 24 & 12,0\% & opcional \\
+Won't have (W) & R20 & 10 & 5,0\% & diferido \\
+\midrule
+Total & 20 requisitos & 200 & 100\% & - \\
+\bottomrule
+\end{tabular}%
+}
+\end{table}
+
+El grupo Must concentra 112 de 200 horas (56,0\%), por debajo del límite del 60\% exigido en la guía. La justificación individual de cada requisito se presenta en la Tabla~\ref{tab:requisitos}.

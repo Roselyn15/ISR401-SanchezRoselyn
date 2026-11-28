@@ -1,0 +1,42 @@
+\subsection{Protocolo de votación ponderada}
+
+La votación ponderada se aplica con tres participantes reales del dominio, identificados solo como V1, V2 y V3. Cada participante reparte exactamente 100 puntos entre los veinte requisitos R01 a R20. No se permiten puntos negativos ni fracciones. El puntaje total de cada requisito es la suma de los tres votos y determina el orden de la técnica.
+
+\begin{table}[ht]
+\centering
+\footnotesize
+\caption{Boleta de votación ponderada (plantilla sin respuestas).}
+\label{tab:votacion}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{@{}lrrrr@{}}
+\toprule
+Requisito & V1 & V2 & V3 & Total \\
+\midrule
+R01 &  &  &  &  \\
+R02 &  &  &  &  \\
+R03 &  &  &  &  \\
+R04 &  &  &  &  \\
+R05 &  &  &  &  \\
+R06 &  &  &  &  \\
+R07 &  &  &  &  \\
+R08 &  &  &  &  \\
+R09 &  &  &  &  \\
+R10 &  &  &  &  \\
+R11 &  &  &  &  \\
+R12 &  &  &  &  \\
+R13 &  &  &  &  \\
+R14 &  &  &  &  \\
+R15 &  &  &  &  \\
+R16 &  &  &  &  \\
+R17 &  &  &  &  \\
+R18 &  &  &  &  \\
+R19 &  &  &  &  \\
+R20 &  &  &  &  \\
+\midrule
+Suma & 100 & 100 & 100 & 300 \\
+\bottomrule
+\end{tabular}%
+}
+\end{table}
+
+Cada boleta se verifica antes del cálculo: la suma de la columna de cada votante debe ser 100. Las respuestas se registran en \texttt{datos/votacion.csv}, con una fila por participante y requisito, y los totales se calculan de forma reproducible con el script \texttt{datos/calcular\_spearman.py}.

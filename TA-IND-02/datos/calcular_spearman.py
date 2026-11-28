@@ -13,6 +13,7 @@ La categoría MoSCoW se convierte en puntaje ordinal:
 Los rangos se promedian en caso de empate. Si las boletas suman 100 por
 participante se valida el formato oficial; si no, se trata la columna
 `puntos` como una ponderación directa y se documenta la limitación.
+Además de rho global, se calcula rho contra cada boleta individual.
 """
 
 import csv
@@ -68,6 +69,7 @@ def leer_moscow():
 def leer_votacion():
     por_votante = defaultdict(int)
     totales = defaultdict(int)
+    puntos_por_votante = defaultdict(dict)
     with (BASE / "votacion.csv").open(encoding="utf-8-sig", newline="") as archivo:
         for fila in csv.DictReader(archivo):
             if not fila.get("puntos"):
@@ -77,18 +79,19 @@ def leer_votacion():
             puntos = int(fila["puntos"])
             por_votante[votante] += puntos  # control de 100 puntos por votante
             totales[requisito] += puntos  # total de cada requisito
+            puntos_por_votante[votante][requisito] = puntos
     if all(suma == 100 for suma in por_votante.values()):
         print("Validación OK: cada votante reparte exactamente 100 puntos.")
     else:
         print("Nota: la ponderación disponible no usa boletas de 100 puntos; se calcula rho con los valores entregados.")
     if not totales:
         raise ValueError("votacion.csv no contiene datos reales aún.")
-    return totales
+    return totales, puntos_por_votante
 
 
 def main():
     moscow = leer_moscow()
-    votos = leer_votacion()
+    votos, puntos_por_votante = leer_votacion()
     requisitos = sorted(set(moscow) & set(votos))  # solo requisitos presentes en ambos CSV
     if len(requisitos) < 2:
         raise ValueError("Se necesitan al menos dos requisitos comunes.")
@@ -99,6 +102,15 @@ def main():
     rho = pearson([rangos_m[r] for r in requisitos], [rangos_v[r] for r in requisitos])
     print(f"n = {len(requisitos)}")
     print(f"rho de Spearman = {rho:.4f}")
+
+    for votante in sorted(puntos_por_votante):
+        puntos = puntos_por_votante[votante]
+        comunes = [r for r in requisitos if r in puntos]
+        if len(comunes) < 2:
+            continue
+        rangos_p = promediar_rangos([(r, puntos[r]) for r in comunes])
+        rho_p = pearson([rangos_m[r] for r in comunes], [rangos_p[r] for r in comunes])
+        print(f"rho {votante} = {rho_p:.4f}")
 
 
 if __name__ == "__main__":

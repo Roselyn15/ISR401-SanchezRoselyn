@@ -11,6 +11,8 @@ Las huellas SHA-256 se calculan sobre el contenido de los CSV con finales de lí
 | ENT-05 | Kano | `ENT-05.pdf` | 2026-11-27 | No registrada | `8B1E113A7320FE6B814098F02F541027A5F5119831403765C265C8B769521019` |
 | --- | Consentimiento | `consentimiento_TA-IND-02_DOM03.pdf` | 2026-11-27 | No registrada | `C001AB7BEA29A2D59ED46085D43990737D365A8DD51BCC1FDFFF78D185522ABA` |
 | --- | Instrumento | `cuestionario_kano_centro_salud (1).pdf` | 2026-11-27 | No registrada | `79DB7D1169E7C5DFCA2098A5CBA530A80D5EC1B421BC5C088347636EBDA75C2C` |
+| ENT-01 a ENT-05 | Kano (transcripción) | `datos/kano_respuestas.csv` (40 filas) | 2026-11-27 | No registrada | `6FD82FE3732ED96134AE6635C11D2C945E9D27E8F4B64FE1D528D1229C7A76CE` |
+| --- | MoSCoW | `datos/moscow.csv` (20 filas) | 2026-11-27 | No registrada | `4DE3FA3E6A3016C3AF0A23DEC92E24424C2B0498AC6FDD82ACA12E5C6442D3DA` |
 | V1 | Ponderación previa | `datos/ponderacion_escala3a5.csv` | 2026-11-27 | No registrada | `C2DB3182235B7A89DFF12927A8CAAFA5B01DAC805DB9FBF58F937D7205F9327D` |
 | V2, V3, V4 | Votación | `datos/votacion.csv` (60 filas, tres boletas de 100 puntos) | 2026-11-27 | No registrada | `9E6DB7639443FA2F8B89FCAA4E93B26BAEAE3DC48179E1054EFA7687181F3644` |
 

@@ -15,3 +15,5 @@ Solo se registran metadatos. No se publican nombres, cédulas, correos, firmas, 
 | V2, V3, V4 | Votación | `datos/votacion.csv` (60 filas, tres boletas de 100 puntos) | 2026-11-27 | No registrada | `9E6DB7639443FA2F8B89FCAA4E93B26BAEAE3DC48179E1054EFA7687181F3644` |
 
 La tabla V1 se conserva aparte y no se mezcla con las boletas oficiales por usar otra escala. Las tres boletas de 100 puntos están completas.
+
+Los originales de V2, V3 y V4 se custodian fuera del repositorio para no publicar datos de las personas participantes; no se dispone de una huella SHA-256 de esos originales dentro del repo y no se inventa una. La única huella registrada para la votación es la del CSV transcrito. La estudiante sostiene que las tres boletas fueron llenadas por personas distintas y debe mostrar los originales al docente si los solicita. Se reporta con transparencia que en 15 de los 20 requisitos el valor de V2 coincide exactamente con el promedio aritmético de V3 y V4 (R02, R03, R05, R06, R07, R08, R09, R10, R11, R12, R13, R14, R15, R16 y R17); este hecho no se ha ocultado ni se han modificado los números para disimularlo.

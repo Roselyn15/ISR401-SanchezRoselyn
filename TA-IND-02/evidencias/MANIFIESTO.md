@@ -1,6 +1,6 @@
 # Manifiesto de evidencia (sin datos personales)
 
-Las huellas SHA-256 se calculan sobre el contenido de los CSV con finales de línea LF, tal como se almacena en Git; el archivo `.gitattributes` conserva ese formato en cualquier sistema operativo. Solo se registran metadatos. No se publican nombres, cédulas, correos, firmas, rostros, voces ni audios. ENT-01 a ENT-05 son los participantes del cuestionario Kano; V1 es la tabla inicial de ponderación y V2, V3 y V4 son las tres boletas oficiales de 100 puntos. La duración de las sesiones no fue registrada en los originales y no se estima para no inventar datos.
+Las huellas SHA-256 de los CSV se calculan sobre el contenido con finales de línea LF, tal como se almacena en Git; el archivo `.gitattributes` conserva ese formato en cualquier sistema operativo. Las filas de PDF registran las huellas de los originales custodiados fuera del repositorio; no se publican los archivos. Solo se registran metadatos. No se publican nombres, cédulas, correos, firmas, rostros, voces ni audios. ENT-01 a ENT-05 son los participantes del cuestionario Kano; V1 es la tabla inicial de ponderación y V2, V3 y V4 son las tres boletas oficiales de 100 puntos. La duración de las sesiones no fue registrada en los originales y no se estima para no inventar datos.
 
 | Código | Técnica | Archivo custodiado | Fecha | Duración | SHA-256 |
 |--------|---------|--------------------|-------|----------|---------|

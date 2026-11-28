@@ -78,9 +78,10 @@ TA-IND-01/
 ## Uso de inteligencia artificial
 
 - **Herramienta:** asistente de IA OpenCode, modelo Big Pickle (noviembre de 2026).
-- **Propósito:** estructura del documento LaTeX, plantillas de tablas, archivo
-  de referencias, resolución de errores de compilación y revisión de ortografía
-  y gramática.
+- **Propósito:** revisión ortográfica y gramatical, revisión del repositorio para
+  detectar errores o información faltante y corrección de errores de compilación.
+  Los enunciados, los datos, la estructura del documento y las decisiones finales
+  son de autoría de la estudiante.
 - **Declaración completa:** sección 8 de `TA-IND-01/main.tex`.
 
 ### Prompts utilizados

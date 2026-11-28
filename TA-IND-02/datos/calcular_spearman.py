@@ -17,8 +17,8 @@ import math
 from collections import defaultdict
 from pathlib import Path
 
-BASE = Path(__file__).resolve().parent
-MOSCOW = {"M": 4, "S": 3, "C": 2, "W": 1}
+BASE = Path(__file__).resolve().parent  # carpeta del script, no la carpeta de ejecución
+MOSCOW = {"M": 4, "S": 3, "C": 2, "W": 1}  # mayor número = mayor prioridad
 
 
 def promediar_rangos(valores):
@@ -30,7 +30,7 @@ def promediar_rangos(valores):
         j = i
         while j + 1 < len(orden) and orden[j + 1][1] == orden[i][1]:
             j += 1
-        promedio = (i + j + 2) / 2.0
+        promedio = (i + j + 2) / 2.0  # promedio de posiciones ocupadas por el empate
         for k in range(i, j + 1):
             rangos[orden[k][0]] = promedio
         i = j + 1
@@ -43,6 +43,7 @@ def pearson(x, y):
     my = sum(y) / n
     num = sum((a - mx) * (b - my) for a, b in zip(x, y))
     den = math.sqrt(sum((a - mx) ** 2 for a in x) * sum((b - my) ** 2 for b in y))
+    # Correlación de Pearson entre rangos = rho de Spearman con empates
     return num / den if den else float("nan")
 
 
@@ -71,8 +72,8 @@ def leer_votacion():
             votante = fila["participante"].strip()
             requisito = fila["requisito"].strip()
             puntos = int(fila["puntos"])
-            por_votante[votante] += puntos
-            totales[requisito] += puntos
+            por_votante[votante] += puntos  # control de 100 puntos por votante
+            totales[requisito] += puntos  # total de cada requisito
     if all(suma == 100 for suma in por_votante.values()):
         print("Validación OK: cada votante reparte exactamente 100 puntos.")
     else:
@@ -85,7 +86,7 @@ def leer_votacion():
 def main():
     moscow = leer_moscow()
     votos = leer_votacion()
-    requisitos = sorted(set(moscow) & set(votos))
+    requisitos = sorted(set(moscow) & set(votos))  # solo requisitos presentes en ambos CSV
     if len(requisitos) < 2:
         raise ValueError("Se necesitan al menos dos requisitos comunes.")
 

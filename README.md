@@ -19,9 +19,9 @@ Cada carpeta contiene sus fuentes LaTeX, su bibliografía y el PDF compilado.
 
 - **Compilador:** pdfLaTeX (TeX Live 2023 o superior, o MiKTeX 24.x).
 - **Bibliografía:** BibTeX con el estilo `IEEEtran` (`IEEEtran.bst`).
-- **Paquetes LaTeX:** `babel-spanish`, `geometry`, `microtype`, `graphicx`,
-  `booktabs`, `longtable`, `array`, `tabularx`, `pdflscape`, `subcaption`,
-  `enumitem`, `xcolor`, `caption`, `cite`, `hyperref`.
+- **Paquetes LaTeX:** `inputenc`, `fontenc`, `cmap`, `babel-spanish`, `geometry`,
+  `microtype`, `graphicx`, `float`, `booktabs`, `longtable`, `array`, `tabularx`,
+  `pdflscape`, `subcaption`, `enumitem`, `xcolor`, `caption`, `cite`, `hyperref`.
 - **Alternativa sin instalación:** [Tectonic](https://tectonic-typesetting.github.io/).
 
 ## Cómo compilar TA-IND-01
@@ -119,7 +119,7 @@ identificadores de requisito no se modificaron.
 
 ### Dependencias
 
-Los paquetes usados en `main.tex` y sus secciones son `inputenc`, `fontenc`, `babel-spanish`, `booktabs`, `graphicx`, `float` e `hyperref`. La bibliografía se procesa con BibTeX y el estilo `IEEEtran` (`IEEEtran.bst`), incluido en TeX Live y MiKTeX. El cálculo de Spearman usa Python 3 con la biblioteca estándar (`csv`, `math`, `collections`, `pathlib`).
+Los paquetes usados en `main.tex` y sus secciones son `inputenc`, `fontenc`, `cmap`, `babel-spanish`, `booktabs`, `graphicx`, `float` e `hyperref`. La bibliografía se procesa con BibTeX y el estilo `IEEEtran` (`IEEEtran.bst`), incluido en TeX Live y MiKTeX. El cálculo de Spearman usa Python 3 con la biblioteca estándar (`csv`, `math`, `collections`, `pathlib`).
 
 ### Cómo compilar
 

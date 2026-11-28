@@ -1,0 +1,11 @@
+\subsection{Cálculo de totales y orden de prioridad}
+
+Cada uno de los tres participantes reparte 100 puntos entre los veinte requisitos. Antes del cálculo se verifica que la suma de cada columna sea exactamente 100. El puntaje total de un requisito es la suma de las tres columnas:
+
+\begin{equation}
+V(R_i)=\sum_{j=1}^{3} p_{j,i},
+\end{equation}
+
+donde $p_{j,i}$ son los puntos asignados por el votante $j$ al requisito $R_i$. El orden de prioridad se construye ordenando los requisitos de mayor a menor $V(R_i)$. Los resultados se registrarán en \texttt{datos/votacion.csv} y se presentarán en una tabla con el total y el rango de cada requisito.
+
+Hasta que se registren las tres boletas reales, la Tabla~\ref{tab:votacion} permanece como plantilla y no se presenta ningún total ni ranking. No se generan votos de prueba: hacerlo convertiría la técnica en evidencia inventada.

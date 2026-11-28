@@ -1,0 +1,7 @@
+\subsection{Criterios de comparación y correlación de Spearman}
+
+La comparación entre MoSCoW y la votación ponderada se hace sobre los mismos veinte requisitos. MoSCoW se convierte en una escala ordinal con $M=4$, $S=3$, $C=2$ y $W=1$, de modo que mayor valor significa mayor prioridad. La votación se ordena por su total $V(R_i)$.
+
+El coeficiente de correlación de rangos de Spearman se calcula como la correlación de Pearson entre los rangos de ambas técnicas, promediando los rangos en caso de empate. El script \texttt{datos/calcular\_spearman.py} implementa este procedimiento con la biblioteca estándar de Python y valida previamente que cada votante sume 100 puntos. La interpretación orientativa es: $\rho > 0{,}7$ correlación fuerte, $0{,}4 \le \rho \le 0{,}7$ moderada y $\rho < 0{,}4$ débil.
+
+Las coincidencias se identifican cuando un requisito clasificado como \emph{Must} ocupa además una de las primeras posiciones de la votación. Las discrepancias aparecen cuando un \emph{Must} recibe pocos puntos o cuando un \emph{Should}, \emph{Could} o \emph{Won't have} recibe una votación alta. En esos casos se revisa el criterio clínico, la dependencia entre requisitos y el costo antes de ajustar la clasificación. El valor numérico de $\rho$ y la lista de coincidencias y discrepancias se incorporan cuando los CSV contengan los datos reales.

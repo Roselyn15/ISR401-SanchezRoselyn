@@ -20,11 +20,11 @@ Es una hoja en la que cada participante reparte **exactamente 100 puntos** entre
 Si prefiere escribirlos en lugar de enviar la foto, use este formato por cada participante:
 
 ```text
- participante,requisito,puntos
- V2,R01,7
- V2,R02,3
- ...
- V2,R20,0
+participante,requisito,puntos
+V2,R01,<puntos reales que escribió la persona>
+V2,R02,<puntos reales que escribió la persona>
+...
+V2,R20,<puntos reales que escribió la persona>
 ```
 
 Reglas: 20 filas por participante, valores enteros, suma exacta de 100 por participante, sin nombres ni cédulas.

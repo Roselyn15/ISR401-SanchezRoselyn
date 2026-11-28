@@ -3,7 +3,10 @@
 
 Entradas:
   datos/moscow.csv     -> requisito,moscow
-  datos/votacion.csv   -> participante,requisito,puntos
+  datos/votacion.csv   -> participante,requisito,puntos (boletas de 100 puntos)
+
+La tabla inicial de escala 3--5 se conserva en ponderacion_escala3a5.csv y no
+se mezcla con las boletas oficiales porque usa otra escala.
 
 La categoría MoSCoW se convierte en puntaje ordinal:
   M=4, S=3, C=2, W=1  (mayor puntaje = mayor prioridad).

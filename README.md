@@ -108,7 +108,7 @@ identificadores de requisito no se modificaron.
 - `TA-IND-02/main.pdf`: PDF compilado del informe.
 - `TA-IND-02/referencias.bib`: referencias en estilo IEEE.
 - `TA-IND-02/secciones/`: catálogo de 20 requisitos, clasificación MoSCoW con control de esfuerzo, instrumento y resultados Kano, ponderación, comparación y decisión.
-- `TA-IND-02/datos/`: respuestas reales de 5 participantes en `kano_respuestas.csv`, ponderación entregada en `votacion.csv`, clasificación en `moscow.csv`, guía de formato y script `calcular_spearman.py`.
+- `TA-IND-02/datos/`: respuestas reales de 5 participantes en `kano_respuestas.csv`, boleta oficial V2 de 100 puntos en `votacion.csv`, tabla previa de escala 3–5 en `ponderacion_escala3a5.csv`, clasificación en `moscow.csv`, guía de formato y script `calcular_spearman.py`.
 - `TA-IND-02/evidencias/MANIFIESTO.md`: metadatos (archivo, fecha, SHA-256) de la evidencia custodiada, sin datos personales.
 - `TA-IND-02/formatos/boleta_votacion_para_llenar.tex` y `.pdf`: boleta **en blanco** para que tres participantes reales repartan 100 puntos entre R01–R20; instrucciones en `TA-IND-02/formatos/LEEME.md`.
 - `TA-IND-02/entrega.tex` y `TA-IND-02/entrega.pdf`: PDF de una página para el SGA.
@@ -140,7 +140,7 @@ cd TA-IND-02
 pdflatex formatos/boleta_votacion_para_llenar.tex
 ```
 
-Para reproducir la correlación ($\rho = 0{,}6708$) con los CSV ya completos se ejecuta:
+Para reproducir la correlación ($\rho = 0{,}7069$) con los CSV ya completos se ejecuta:
 
 ```bash
 python datos/calcular_spearman.py

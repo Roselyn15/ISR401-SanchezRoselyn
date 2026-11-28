@@ -1,6 +1,6 @@
 # Manifiesto de evidencia (sin datos personales)
 
-Solo se registran metadatos de los archivos custodiados en la carpeta institucional privada. No se publican nombres, cédulas, correos, firmas, rostros, voces ni audios. Los códigos ENT-01 a ENT-05 corresponden a los participantes del cuestionario Kano; V1 corresponde a la tabla de ponderación entregada.
+Solo se registran metadatos de los archivos custodiados en la carpeta institucional privada. No se publican nombres, cédulas, correos, firmas, rostros, voces ni audios. Los códigos ENT-01 a ENT-05 corresponden a los participantes del cuestionario Kano; V1 es la tabla inicial de ponderación y V2 es la boleta oficial de 100 puntos.
 
 | Código | Técnica | Archivo custodiado | Fecha | Duración | SHA-256 |
 |--------|---------|--------------------|-------|----------|---------|
@@ -11,6 +11,7 @@ Solo se registran metadatos de los archivos custodiados en la carpeta institucio
 | ENT-05 | Kano | `ENT-05.pdf` | 2026-11-27 | No registrada | `8B1E113A7320FE6B814098F02F541027A5F5119831403765C265C8B769521019` |
 | --- | Consentimiento | `consentimiento_TA-IND-02_DOM03.pdf` | 2026-11-27 | No registrada | `C001AB7BEA29A2D59ED46085D43990737D365A8DD51BCC1FDFFF78D185522ABA` |
 | --- | Instrumento | `cuestionario_kano_centro_salud (1).pdf` | 2026-11-27 | No registrada | `79DB7D1169E7C5DFCA2098A5CBA530A80D5EC1B421BC5C088347636EBDA75C2C` |
-| V1 | Ponderación | Tabla de ponderación entregada (20 requisitos, escala 3--5) | 2026-11-27 | No registrada | No aplica (tabla digitada en `datos/votacion.csv`) |
+| V1 | Ponderación previa | Tabla de ponderación entregada (20 requisitos, escala 3--5, total 85) | 2026-11-27 | No registrada | No aplica (digitada en `datos/ponderacion_escala3a5.csv`) |
+| V2 | Votación | Boleta oficial de 100 puntos llenada por una persona real (20 requisitos, total 100) | 2026-11-27 | No registrada | No aplica (transcrita de la boleta a `datos/votacion.csv`) |
 
-La ponderación disponible es una sola tabla, no las tres boletas de 100 puntos previstas en el kit de formatos; esta limitación se declara en el informe.
+Se recibió **una** boleta oficial de 100 puntos; faltan dos para completar las tres previstas en el kit de formatos. La tabla V1 se conserva aparte y no se mezcla con V2 por usar otra escala. Esta limitación se declara en el informe.

@@ -1,39 +1,39 @@
 ﻿% Catálogo tomado de la tabla de ponderación entregada por la autora.
-% Las métricas marcadas como "propuesta" son criterios del analista, no respuestas de campo.
-\begin{table}[ht]
+% F = funcional, C = calidad, R = restricción (tecnológica, de planificación o de proceso).
+% Las verificaciones propuestas son criterios del analista, no respuestas de campo.
+\begin{table}[H]
 \centering
 \footnotesize
 \caption{Requisitos del catálogo entregado y su clasificación MoSCoW \cite{iso29148,pohl2025}.}
 \label{tab:requisitos}
 \resizebox{\linewidth}{!}{%
-\begin{tabular}{@{}p{1.1cm}p{0.9cm}p{5.2cm}p{1.5cm}p{3.4cm}@{}}
+\begin{tabular}{@{}p{0.9cm}p{0.9cm}p{4.9cm}p{1.4cm}p{4.2cm}@{}}
 \toprule
-ID & Tipo & Enunciado & MoSCoW & Justificación \\
+ID & Tipo & Enunciado votado & MoSCoW & Justificación / verificación propuesta \\
 \midrule
-R01 & F & El sistema debe permitir reservar citas médicas. & M & Función central del agendamiento \\
-R02 & F & El sistema debe enviar recordatorios por mensaje de texto. & S & Reduce inasistencias; no bloquea la versión 1 \\
-R03 & C & El sistema debe responder en $\le 2$ s al 95\% de peticiones (métrica propuesta). & C & Desempeño deseable, verificable con pruebas \\
-R04 & F & El sistema debe registrar la llegada de pacientes. & M & Entrada obligatoria al flujo de triaje \\
-R05 & F & El sistema debe desarrollarse en Java 21 y PostgreSQL. & S & Restricción tecnológica acordada, diferible si hay riesgo \\
-R06 & F & El sistema debe consultar pacientes del día y marcar consultas atendidas. & M & Cierre operativo de la jornada \\
-R07 & F & El sistema debe proteger los datos de salud de los pacientes. & M & Seguridad clínica y confidencialidad \\
-R08 & C & El sistema debe funcionar en teléfonos Android 10 o superior. & C & Compatibilidad amplia, no bloqueante \\
-R09 & F & El sistema debe registrar cancelaciones tardías como inasistencias. & S & Regla administrativa importante pero no crítica \\
-R10 & C & El sistema debe ser fácil de usar para adultos mayores ($\le 3$ min al 90\%, métrica propuesta). & M & Accesibilidad del grupo prioritario \\
-R11 & C & El proyecto debe entregarse en seis meses. & C & Restricción de planificación, no funcionalidad \\
-R12 & F & El sistema debe cerrar automáticamente la sesión después de 10 minutos. & S & Control de seguridad complementario \\
-R13 & F & El sistema debe registrar la llegada e imprimir tickets en el quiosco. & S & Automatización útil; el registro manual ya cubre R04 \\
-R14 & C & El sistema debe mantenerse disponible al menos 99,5\% mensual (métrica propuesta). & M & Continuidad del servicio de salud \\
-R15 & F & El sistema debe generar reportes mensuales de inasistencias. & S & Apoyo a la gestión, no urgente \\
-R16 & C & El sistema debe validar cada incremento cada dos semanas. & C & Práctica de calidad, diferible al piloto \\
-R17 & C & El sistema debe cumplir la Ley de Protección de Datos Personales. & M & Requisito legal obligatorio \\
-R18 & F & El sistema debe integrarse con el sistema de facturación actual. & C & Integración de valor, dependiente de interfaces externas \\
-R19 & C & El sistema debe recuperarse en menos de 30 minutos sin perder citas. & M & Continuidad y durabilidad de la información \\
-R20 & F & El sistema debe revisar los cambios de código antes de integrarlos. & W & Práctica de desarrollo; se difiere a la versión 2 \\
+R01 & F & Reservar citas médicas. & M & Función central del agendamiento \\
+R02 & F & Enviar recordatorios por mensaje de texto. & S & Reduce inasistencias; no bloquea la versión 1 \\
+R03 & C & La aplicación debe ser rápida. & C & Propuesta: $\le 2$ s al 95\% con 50 usuarios concurrentes \\
+R04 & F & Registrar la llegada de pacientes. & M & Entrada obligatoria al flujo de atención \\
+R05 & R & Desarrollar la plataforma en Java 21 y PostgreSQL. & S & Restricción tecnológica; se verifica por revisión de la pila \\
+R06 & F & Consultar pacientes del día y marcar consultas atendidas. & M & Cierre operativo de la jornada \\
+R07 & F & Proteger los datos de salud de los pacientes. & M & Propuesta: cifrado en tránsito y en reposo, roles y registro de accesos \\
+R08 & C & Funcionar en teléfonos Android 10 o superior. & C & Compatibilidad verificable en Android 10 o superior \\
+R09 & F & Registrar cancelaciones tardías como inasistencias. & S & Regla administrativa no crítica \\
+R10 & C & Ser fácil de utilizar para adultos mayores. & M & Propuesta: $\le 3$ min al 90\% reservando una cita \\
+R11 & R & Entregar el proyecto en seis meses. & C & Restricción de planificación, no funcionalidad del sistema \\
+R12 & F & Cerrar automáticamente la sesión después de 10 minutos. & S & Control de seguridad complementario \\
+R13 & F & Registrar llegada e imprimir tickets en el quiosco. & S & Automatización útil; R04 cubre el registro manual \\
+R14 & C & Mantener la plataforma siempre disponible. & M & Propuesta: disponibilidad $\ge 99{,}5\%$ mensual por monitor de servicio \\
+R15 & F & Generar reportes mensuales de inasistencias. & S & Apoyo a la gestión, no urgente \\
+R16 & R & Validar cada incremento cada dos semanas. & C & Restricción del proceso de desarrollo \\
+R17 & C & Cumplir la Ley de Protección de Datos Personales. & M & Propuesta: consentimiento, retención y acceso del titular \\
+R18 & F & Integrarse con el sistema de facturación actual. & C & Integración de valor; depende de interfaces externas \\
+R19 & C & Recuperar el servicio en menos de 30 minutos sin perder citas. & M & Propuesta: RTO $< 30$ min sin pérdida de citas \\
+R20 & R & Revisar los cambios de código antes de integrarlos. & W & Restricción de proceso; se difiere a la versión 2 \\
 \bottomrule
 \end{tabular}%
 }
 \end{table}
 
-La tabla contiene 12 requisitos funcionales (R01, R02, R04, R05, R06, R07, R09, R12, R13, R15, R18, R20) y 8 de calidad (R03, R08, R10, R11, R14, R16, R17, R19). Las métricas de R03, R10 y R14 son propuestas del analista para hacer verificables los enunciados cualitativos del catálogo entregado; no se atribuyen a los entrevistados.
-
+La tabla contiene 10 requisitos funcionales (R01, R02, R04, R06, R07, R09, R12, R13, R15, R18), 6 de calidad (R03, R08, R10, R14, R17, R19) y 4 restricciones (R05, R11, R16, R20). La votación se realizó sobre los enunciados cortos del catálogo; las verificaciones propuestas para R03, R07, R10, R14, R17 y R19 se añadieron después para hacer verificables los enunciados cualitativos y no fueron objeto de votación.

@@ -1,0 +1,2 @@
+# Conservar los CSV con saltos de línea LF para que las huellas SHA-256 del manifiesto sean reproducibles.
+*.csv text eol=lf
